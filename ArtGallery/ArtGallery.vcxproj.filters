@@ -36,6 +36,9 @@
     <ClCompile Include="init.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArtWork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Artist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -59,6 +62,9 @@
     <ClInclude Include="OOPLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArtWork.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Artist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -70,9 +76,15 @@
     <None Include="Users.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="ArtWorks.csv">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Artists.csv" />
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Text.txt" />
+    <Text Include="state.txt" />
   </ItemGroup>
 </Project>
