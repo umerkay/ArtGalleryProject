@@ -39,6 +39,12 @@
     <ClCompile Include="ArtWork.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Artist.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auth.h">
@@ -59,12 +65,21 @@
     <ClInclude Include="ArtWork.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Artist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Users.csv">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ArtWorks.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Artists.csv" />
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

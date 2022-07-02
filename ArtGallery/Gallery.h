@@ -1,6 +1,7 @@
 #pragma once
 #include "User.h"
 #include "ArtWork.h"
+#include"Artist.h"
 
 class Gallery {
 private:
@@ -8,6 +9,11 @@ private:
 	User* currUser;
 	int totalUsers;
 	bool userHasAuthenticated;
+	//artist related
+	Artist* Artists;
+	Artist* currArtist;
+	int totalArtists;
+
 
 	ArtWork* ArtWorks;
 	int totalArtWorks;
@@ -30,7 +36,9 @@ public:
 	//artwork related
 	ArtWork* getArtWorkByID(int);
 
-	//artist related
+	//artist related functions
+	Artist* getArtistbyID(int id);
+
 };
 
 static std::string toStandardString(System::String^ string)
