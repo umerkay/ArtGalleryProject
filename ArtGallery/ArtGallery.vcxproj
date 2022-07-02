@@ -128,6 +128,8 @@
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="init.h" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="AristForm.cpp" />
+    <ClCompile Include="ArtWorkForm.cpp" />
     <ClCompile Include="OOPLogic.cpp" />
     <ClCompile Include="Artist.cpp" />
     <ClCompile Include="Cart.cpp" />
@@ -144,6 +146,12 @@
     <ClInclude Include="Home.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ArtistForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ArtWorkForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="OOPLogic.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
@@ -153,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtistForm.resx">
+      <DependentUpon>ArtistForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtWorkForm.resx">
+      <DependentUpon>ArtWorkForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
