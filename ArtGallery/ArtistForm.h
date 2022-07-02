@@ -35,15 +35,21 @@ namespace ArtGallery {
 			}
 		}
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::TextBox^ NameOfArtist;
 	protected:
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ ArtistBirthPlace;
+
+	private: System::Windows::Forms::TextBox^ Age;
+	private: System::Windows::Forms::TextBox^ StyleOfArtist;
+
+
+
+
+
 
 	private:
 		/// <summary>
@@ -60,14 +66,13 @@ namespace ArtGallery {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->NameOfArtist = (gcnew System::Windows::Forms::TextBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->ArtistBirthPlace = (gcnew System::Windows::Forms::TextBox());
+			this->Age = (gcnew System::Windows::Forms::TextBox());
+			this->StyleOfArtist = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -79,17 +84,17 @@ namespace ArtGallery {
 			this->panel1->Size = System::Drawing::Size(221, 173);
 			this->panel1->TabIndex = 0;
 			// 
-			// textBox1
+			// NameOfArtist
 			// 
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NameOfArtist->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->NameOfArtist->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(354, 44);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(261, 69);
-			this->textBox1->TabIndex = 1;
-			this->textBox1->Text = L"Van Gogh";
+			this->NameOfArtist->Location = System::Drawing::Point(354, 44);
+			this->NameOfArtist->Multiline = true;
+			this->NameOfArtist->Name = L"NameOfArtist";
+			this->NameOfArtist->Size = System::Drawing::Size(261, 69);
+			this->NameOfArtist->TabIndex = 1;
+			this->NameOfArtist->Text = L"Van Gogh";
 			// 
 			// panel2
 			// 
@@ -118,51 +123,39 @@ namespace ArtGallery {
 			this->panel4->Size = System::Drawing::Size(248, 129);
 			this->panel4->TabIndex = 4;
 			// 
-			// textBox2
+			// ArtistBirthPlace
 			// 
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ArtistBirthPlace->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->ArtistBirthPlace->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(364, 119);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(433, 32);
-			this->textBox2->TabIndex = 5;
-			this->textBox2->Text = L"BornVincent Willem van Gogh · 30 Mar";
+			this->ArtistBirthPlace->Location = System::Drawing::Point(364, 136);
+			this->ArtistBirthPlace->Multiline = true;
+			this->ArtistBirthPlace->Name = L"ArtistBirthPlace";
+			this->ArtistBirthPlace->Size = System::Drawing::Size(433, 32);
+			this->ArtistBirthPlace->TabIndex = 5;
+			this->ArtistBirthPlace->Text = L"BornVincent Willem van Gogh · 30 Mar";
 			// 
-			// textBox3
+			// Age
 			// 
-			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Age->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->Age->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(364, 148);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(433, 32);
-			this->textBox3->TabIndex = 6;
-			this->textBox3->Text = L"Died29 July 1890 (aged 37";
+			this->Age->Location = System::Drawing::Point(364, 174);
+			this->Age->Name = L"Age";
+			this->Age->Size = System::Drawing::Size(538, 22);
+			this->Age->TabIndex = 7;
+			this->Age->Text = L"37";
 			// 
-			// textBox4
+			// StyleOfArtist
 			// 
-			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->StyleOfArtist->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->StyleOfArtist->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(364, 174);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(538, 22);
-			this->textBox4->TabIndex = 7;
-			this->textBox4->Text = L"EducationRoyal Academy of Fine Arts, Willem II College, Academy of Finearts)";
-			// 
-			// textBox5
-			// 
-			this->textBox5->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(364, 202);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(538, 22);
-			this->textBox5->TabIndex = 8;
-			this->textBox5->Text = L"Known forPainting, drawing still life, portraits and landscapes";
+			this->StyleOfArtist->Location = System::Drawing::Point(364, 202);
+			this->StyleOfArtist->Name = L"StyleOfArtist";
+			this->StyleOfArtist->Size = System::Drawing::Size(538, 22);
+			this->StyleOfArtist->TabIndex = 8;
+			this->StyleOfArtist->Text = L"Known forPainting, drawing still life, portraits and landscapes";
 			// 
 			// MyForm
 			// 
@@ -171,14 +164,13 @@ namespace ArtGallery {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1034, 429);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->StyleOfArtist);
+			this->Controls->Add(this->Age);
+			this->Controls->Add(this->ArtistBirthPlace);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->NameOfArtist);
 			this->Controls->Add(this->panel1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";

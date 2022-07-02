@@ -41,27 +41,46 @@ namespace ArtGallery {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ SearchBox;
 	protected:
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
+
+	private: System::Windows::Forms::Button^ LogOut;
+	private: System::Windows::Forms::Button^ BackArrow;
+	protected:
+
+
+	private: System::Windows::Forms::Button^ ForwardArrow;
+
+	private: System::Windows::Forms::PictureBox^ Artwork1;
+
+	private: System::Windows::Forms::PictureBox^ Artwork2;
+
+	private: System::Windows::Forms::PictureBox^ Artwork3;
+	private: System::Windows::Forms::TextBox^ WelcomeFixed;
 
 
 
-	private: System::Windows::Forms::TextBox^ textBox2;
 
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::PictureBox^ pictureBox7;
-	private: System::Windows::Forms::PictureBox^ pictureBox9;
-	private: System::Windows::Forms::PictureBox^ pictureBox4;
-	private: System::Windows::Forms::PictureBox^ pictureBox5;
-	private: System::Windows::Forms::PictureBox^ pictureBox6;
-	private: System::Windows::Forms::PictureBox^ pictureBox8;
-	private: System::Windows::Forms::PictureBox^ pictureBox10;
+
+	private: System::Windows::Forms::TextBox^ Username;
+	private: System::Windows::Forms::PictureBox^ Artwork4;
+	private: System::Windows::Forms::PictureBox^ Artwork5;
+	private: System::Windows::Forms::PictureBox^ Rec1;
+	private: System::Windows::Forms::PictureBox^ Rec2;
+	private: System::Windows::Forms::PictureBox^ Rec3;
+	private: System::Windows::Forms::PictureBox^ Rec4;
+	private: System::Windows::Forms::PictureBox^ Rec5;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,227 +105,227 @@ namespace ArtGallery {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox10 = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->BeginInit();
+			this->SearchBox = (gcnew System::Windows::Forms::TextBox());
+			this->LogOut = (gcnew System::Windows::Forms::Button());
+			this->BackArrow = (gcnew System::Windows::Forms::Button());
+			this->ForwardArrow = (gcnew System::Windows::Forms::Button());
+			this->Artwork1 = (gcnew System::Windows::Forms::PictureBox());
+			this->Artwork2 = (gcnew System::Windows::Forms::PictureBox());
+			this->Artwork3 = (gcnew System::Windows::Forms::PictureBox());
+			this->WelcomeFixed = (gcnew System::Windows::Forms::TextBox());
+			this->Username = (gcnew System::Windows::Forms::TextBox());
+			this->Artwork4 = (gcnew System::Windows::Forms::PictureBox());
+			this->Artwork5 = (gcnew System::Windows::Forms::PictureBox());
+			this->Rec1 = (gcnew System::Windows::Forms::PictureBox());
+			this->Rec2 = (gcnew System::Windows::Forms::PictureBox());
+			this->Rec3 = (gcnew System::Windows::Forms::PictureBox());
+			this->Rec4 = (gcnew System::Windows::Forms::PictureBox());
+			this->Rec5 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec5))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// textBox1
+			// SearchBox
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::White;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Location = System::Drawing::Point(859, 107);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(339, 19);
-			this->textBox1->TabIndex = 2;
-			this->textBox1->Text = L"Search box";
+			this->SearchBox->BackColor = System::Drawing::Color::White;
+			this->SearchBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->SearchBox->Location = System::Drawing::Point(859, 107);
+			this->SearchBox->Name = L"SearchBox";
+			this->SearchBox->Size = System::Drawing::Size(339, 19);
+			this->SearchBox->TabIndex = 2;
+			this->SearchBox->Text = L"Search box";
 			// 
-			// button1
+			// LogOut
 			// 
-			this->button1->BackColor = System::Drawing::Color::Black;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->LogOut->BackColor = System::Drawing::Color::Black;
+			this->LogOut->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->LogOut->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->button1->Location = System::Drawing::Point(1140, 12);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(130, 59);
-			this->button1->TabIndex = 3;
-			this->button1->Text = L"Log Out";
-			this->button1->UseVisualStyleBackColor = false;
+			this->LogOut->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->LogOut->Location = System::Drawing::Point(1140, 12);
+			this->LogOut->Name = L"LogOut";
+			this->LogOut->Size = System::Drawing::Size(130, 59);
+			this->LogOut->TabIndex = 3;
+			this->LogOut->Text = L"Log Out";
+			this->LogOut->UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// BackArrow
 			// 
-			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
-			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->BackArrow->BackColor = System::Drawing::Color::Transparent;
+			this->BackArrow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BackArrow.BackgroundImage")));
+			this->BackArrow->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->BackArrow->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(58, 257);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 77);
-			this->button2->TabIndex = 4;
-			this->button2->UseVisualStyleBackColor = false;
+			this->BackArrow->Location = System::Drawing::Point(58, 257);
+			this->BackArrow->Name = L"BackArrow";
+			this->BackArrow->Size = System::Drawing::Size(75, 77);
+			this->BackArrow->TabIndex = 4;
+			this->BackArrow->UseVisualStyleBackColor = false;
 			// 
-			// button3
+			// ForwardArrow
 			// 
-			this->button3->BackColor = System::Drawing::Color::Transparent;
-			this->button3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.BackgroundImage")));
-			this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ForwardArrow->BackColor = System::Drawing::Color::Transparent;
+			this->ForwardArrow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ForwardArrow.BackgroundImage")));
+			this->ForwardArrow->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ForwardArrow->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(1195, 257);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 77);
-			this->button3->TabIndex = 5;
-			this->button3->UseVisualStyleBackColor = false;
+			this->ForwardArrow->Location = System::Drawing::Point(1195, 257);
+			this->ForwardArrow->Name = L"ForwardArrow";
+			this->ForwardArrow->Size = System::Drawing::Size(75, 77);
+			this->ForwardArrow->TabIndex = 5;
+			this->ForwardArrow->UseVisualStyleBackColor = false;
 			// 
-			// pictureBox1
+			// Artwork1
 			// 
-			this->pictureBox1->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox1->Location = System::Drawing::Point(139, 203);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(205, 167);
-			this->pictureBox1->TabIndex = 6;
-			this->pictureBox1->TabStop = false;
+			this->Artwork1->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Artwork1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork1.BackgroundImage")));
+			this->Artwork1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Artwork1->Location = System::Drawing::Point(139, 203);
+			this->Artwork1->Name = L"Artwork1";
+			this->Artwork1->Size = System::Drawing::Size(205, 167);
+			this->Artwork1->TabIndex = 6;
+			this->Artwork1->TabStop = false;
 			// 
-			// pictureBox2
+			// Artwork2
 			// 
-			this->pictureBox2->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox2->Location = System::Drawing::Point(350, 203);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(213, 167);
-			this->pictureBox2->TabIndex = 7;
-			this->pictureBox2->TabStop = false;
+			this->Artwork2->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Artwork2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork2.BackgroundImage")));
+			this->Artwork2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Artwork2->Location = System::Drawing::Point(350, 203);
+			this->Artwork2->Name = L"Artwork2";
+			this->Artwork2->Size = System::Drawing::Size(213, 167);
+			this->Artwork2->TabIndex = 7;
+			this->Artwork2->TabStop = false;
 			// 
-			// pictureBox3
+			// Artwork3
 			// 
-			this->pictureBox3->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
-			this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox3->Location = System::Drawing::Point(569, 203);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(209, 167);
-			this->pictureBox3->TabIndex = 8;
-			this->pictureBox3->TabStop = false;
-			this->pictureBox3->Click += gcnew System::EventHandler(this, &Home::pictureBox3_Click);
+			this->Artwork3->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Artwork3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork3.BackgroundImage")));
+			this->Artwork3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Artwork3->Location = System::Drawing::Point(569, 203);
+			this->Artwork3->Name = L"Artwork3";
+			this->Artwork3->Size = System::Drawing::Size(209, 167);
+			this->Artwork3->TabIndex = 8;
+			this->Artwork3->TabStop = false;
+			this->Artwork3->Click += gcnew System::EventHandler(this, &Home::pictureBox3_Click);
 			// 
-			// textBox2
+			// WelcomeFixed
 			// 
-			this->textBox2->BackColor = System::Drawing::SystemColors::MenuText;
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 28, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->WelcomeFixed->BackColor = System::Drawing::SystemColors::MenuText;
+			this->WelcomeFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->WelcomeFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 28, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->ForeColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox2->Location = System::Drawing::Point(111, 28);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(320, 82);
-			this->textBox2->TabIndex = 12;
-			this->textBox2->Text = L"WELCOME";
+			this->WelcomeFixed->ForeColor = System::Drawing::SystemColors::InactiveBorder;
+			this->WelcomeFixed->Location = System::Drawing::Point(111, 28);
+			this->WelcomeFixed->Multiline = true;
+			this->WelcomeFixed->Name = L"WelcomeFixed";
+			this->WelcomeFixed->Size = System::Drawing::Size(320, 82);
+			this->WelcomeFixed->TabIndex = 12;
+			this->WelcomeFixed->Text = L"WELCOME";
 			// 
-			// textBox3
+			// Username
 			// 
-			this->textBox3->BackColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 28, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Username->BackColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->Username->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->Username->Font = (gcnew System::Drawing::Font(L"Segoe UI", 28, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->ForeColor = System::Drawing::SystemColors::InactiveBorder;
-			this->textBox3->Location = System::Drawing::Point(388, 28);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(376, 79);
-			this->textBox3->TabIndex = 15;
-			this->textBox3->Text = L"MANAHIL";
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &Home::textBox3_TextChanged);
+			this->Username->ForeColor = System::Drawing::SystemColors::InactiveBorder;
+			this->Username->Location = System::Drawing::Point(388, 28);
+			this->Username->Multiline = true;
+			this->Username->Name = L"Username";
+			this->Username->Size = System::Drawing::Size(376, 79);
+			this->Username->TabIndex = 15;
+			this->Username->Text = L"MANAHIL";
+			this->Username->TextChanged += gcnew System::EventHandler(this, &Home::textBox3_TextChanged);
 			// 
-			// pictureBox7
+			// Artwork4
 			// 
-			this->pictureBox7->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.BackgroundImage")));
-			this->pictureBox7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox7->Location = System::Drawing::Point(784, 203);
-			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(204, 167);
-			this->pictureBox7->TabIndex = 16;
-			this->pictureBox7->TabStop = false;
-			this->pictureBox7->Click += gcnew System::EventHandler(this, &Home::pictureBox7_Click);
+			this->Artwork4->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Artwork4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork4.BackgroundImage")));
+			this->Artwork4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Artwork4->Location = System::Drawing::Point(784, 203);
+			this->Artwork4->Name = L"Artwork4";
+			this->Artwork4->Size = System::Drawing::Size(204, 167);
+			this->Artwork4->TabIndex = 16;
+			this->Artwork4->TabStop = false;
+			this->Artwork4->Click += gcnew System::EventHandler(this, &Home::pictureBox7_Click);
 			// 
-			// pictureBox9
+			// Artwork5
 			// 
-			this->pictureBox9->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.BackgroundImage")));
-			this->pictureBox9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox9->Location = System::Drawing::Point(994, 203);
-			this->pictureBox9->Name = L"pictureBox9";
-			this->pictureBox9->Size = System::Drawing::Size(204, 167);
-			this->pictureBox9->TabIndex = 17;
-			this->pictureBox9->TabStop = false;
-			this->pictureBox9->Click += gcnew System::EventHandler(this, &Home::pictureBox9_Click);
+			this->Artwork5->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Artwork5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork5.BackgroundImage")));
+			this->Artwork5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Artwork5->Location = System::Drawing::Point(994, 203);
+			this->Artwork5->Name = L"Artwork5";
+			this->Artwork5->Size = System::Drawing::Size(204, 167);
+			this->Artwork5->TabIndex = 17;
+			this->Artwork5->TabStop = false;
+			this->Artwork5->Click += gcnew System::EventHandler(this, &Home::pictureBox9_Click);
 			// 
-			// pictureBox4
+			// Rec1
 			// 
-			this->pictureBox4->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.BackgroundImage")));
-			this->pictureBox4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox4->Location = System::Drawing::Point(139, 454);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(205, 167);
-			this->pictureBox4->TabIndex = 18;
-			this->pictureBox4->TabStop = false;
+			this->Rec1->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Rec1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec1.BackgroundImage")));
+			this->Rec1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Rec1->Location = System::Drawing::Point(139, 454);
+			this->Rec1->Name = L"Rec1";
+			this->Rec1->Size = System::Drawing::Size(205, 167);
+			this->Rec1->TabIndex = 18;
+			this->Rec1->TabStop = false;
 			// 
-			// pictureBox5
+			// Rec2
 			// 
-			this->pictureBox5->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.BackgroundImage")));
-			this->pictureBox5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox5->Location = System::Drawing::Point(350, 454);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(213, 167);
-			this->pictureBox5->TabIndex = 19;
-			this->pictureBox5->TabStop = false;
+			this->Rec2->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Rec2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec2.BackgroundImage")));
+			this->Rec2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Rec2->Location = System::Drawing::Point(350, 454);
+			this->Rec2->Name = L"Rec2";
+			this->Rec2->Size = System::Drawing::Size(213, 167);
+			this->Rec2->TabIndex = 19;
+			this->Rec2->TabStop = false;
 			// 
-			// pictureBox6
+			// Rec3
 			// 
-			this->pictureBox6->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.BackgroundImage")));
-			this->pictureBox6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox6->Location = System::Drawing::Point(569, 454);
-			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(209, 167);
-			this->pictureBox6->TabIndex = 20;
-			this->pictureBox6->TabStop = false;
-			this->pictureBox6->Click += gcnew System::EventHandler(this, &Home::pictureBox6_Click);
+			this->Rec3->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Rec3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec3.BackgroundImage")));
+			this->Rec3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Rec3->Location = System::Drawing::Point(569, 454);
+			this->Rec3->Name = L"Rec3";
+			this->Rec3->Size = System::Drawing::Size(209, 167);
+			this->Rec3->TabIndex = 20;
+			this->Rec3->TabStop = false;
+			this->Rec3->Click += gcnew System::EventHandler(this, &Home::pictureBox6_Click);
 			// 
-			// pictureBox8
+			// Rec4
 			// 
-			this->pictureBox8->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.BackgroundImage")));
-			this->pictureBox8->Location = System::Drawing::Point(784, 454);
-			this->pictureBox8->Name = L"pictureBox8";
-			this->pictureBox8->Size = System::Drawing::Size(204, 167);
-			this->pictureBox8->TabIndex = 21;
-			this->pictureBox8->TabStop = false;
-			this->pictureBox8->Click += gcnew System::EventHandler(this, &Home::pictureBox8_Click);
+			this->Rec4->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Rec4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec4.BackgroundImage")));
+			this->Rec4->Location = System::Drawing::Point(784, 454);
+			this->Rec4->Name = L"Rec4";
+			this->Rec4->Size = System::Drawing::Size(204, 167);
+			this->Rec4->TabIndex = 21;
+			this->Rec4->TabStop = false;
+			this->Rec4->Click += gcnew System::EventHandler(this, &Home::pictureBox8_Click);
 			// 
-			// pictureBox10
+			// Rec5
 			// 
-			this->pictureBox10->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox10->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox10.BackgroundImage")));
-			this->pictureBox10->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox10->Location = System::Drawing::Point(994, 454);
-			this->pictureBox10->Name = L"pictureBox10";
-			this->pictureBox10->Size = System::Drawing::Size(204, 167);
-			this->pictureBox10->TabIndex = 22;
-			this->pictureBox10->TabStop = false;
-			this->pictureBox10->Click += gcnew System::EventHandler(this, &Home::pictureBox10_Click);
+			this->Rec5->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Rec5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec5.BackgroundImage")));
+			this->Rec5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Rec5->Location = System::Drawing::Point(994, 454);
+			this->Rec5->Name = L"Rec5";
+			this->Rec5->Size = System::Drawing::Size(204, 167);
+			this->Rec5->TabIndex = 22;
+			this->Rec5->TabStop = false;
+			this->Rec5->Click += gcnew System::EventHandler(this, &Home::pictureBox10_Click);
 			// 
 			// Home
 			// 
@@ -315,36 +334,36 @@ namespace ArtGallery {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1344, 712);
-			this->Controls->Add(this->pictureBox10);
-			this->Controls->Add(this->pictureBox8);
-			this->Controls->Add(this->pictureBox6);
-			this->Controls->Add(this->pictureBox5);
-			this->Controls->Add(this->pictureBox4);
-			this->Controls->Add(this->pictureBox9);
-			this->Controls->Add(this->pictureBox7);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->pictureBox3);
-			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->Rec5);
+			this->Controls->Add(this->Rec4);
+			this->Controls->Add(this->Rec3);
+			this->Controls->Add(this->Rec2);
+			this->Controls->Add(this->Rec1);
+			this->Controls->Add(this->Artwork5);
+			this->Controls->Add(this->Artwork4);
+			this->Controls->Add(this->Username);
+			this->Controls->Add(this->WelcomeFixed);
+			this->Controls->Add(this->Artwork3);
+			this->Controls->Add(this->Artwork2);
+			this->Controls->Add(this->Artwork1);
+			this->Controls->Add(this->ForwardArrow);
+			this->Controls->Add(this->BackArrow);
+			this->Controls->Add(this->LogOut);
+			this->Controls->Add(this->SearchBox);
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"Home";
 			this->Text = L"Home";
 			this->Load += gcnew System::EventHandler(this, &Home::Home_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec5))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

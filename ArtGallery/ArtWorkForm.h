@@ -34,17 +34,30 @@ namespace ArtGallery {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ ArtworkOnArtPage;
 	protected:
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::TextBox^ textBox9;
+
+	private: System::Windows::Forms::TextBox^ TitleOfArt;
+	private: System::Windows::Forms::TextBox^ ByArtistFixed;
+
+	protected:
+
+
+	private: System::Windows::Forms::TextBox^ ArtistName;
+	private: System::Windows::Forms::TextBox^ DateofArtFixed;
+
+
+	private: System::Windows::Forms::TextBox^ DateCreated;
+	private: System::Windows::Forms::TextBox^ TypeofArtFixed;
+
+
+	private: System::Windows::Forms::TextBox^ TypeOfArt;
+	private: System::Windows::Forms::TextBox^ PriceOfArt;
+
+
+	private: System::Windows::Forms::TextBox^ Price;
+	private: System::Windows::Forms::Button^ LikeArt;
+
 
 	private:
 		/// <summary>
@@ -60,130 +73,143 @@ namespace ArtGallery {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->ArtworkOnArtPage = (gcnew System::Windows::Forms::Panel());
+			this->TitleOfArt = (gcnew System::Windows::Forms::TextBox());
+			this->ByArtistFixed = (gcnew System::Windows::Forms::TextBox());
+			this->ArtistName = (gcnew System::Windows::Forms::TextBox());
+			this->DateofArtFixed = (gcnew System::Windows::Forms::TextBox());
+			this->DateCreated = (gcnew System::Windows::Forms::TextBox());
+			this->TypeofArtFixed = (gcnew System::Windows::Forms::TextBox());
+			this->TypeOfArt = (gcnew System::Windows::Forms::TextBox());
+			this->PriceOfArt = (gcnew System::Windows::Forms::TextBox());
+			this->Price = (gcnew System::Windows::Forms::TextBox());
+			this->LikeArt = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// panel1
+			// ArtworkOnArtPage
 			// 
-			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel1->Location = System::Drawing::Point(40, 31);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(450, 357);
-			this->panel1->TabIndex = 0;
+			this->ArtworkOnArtPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ArtworkOnArtPage.BackgroundImage")));
+			this->ArtworkOnArtPage->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ArtworkOnArtPage->Location = System::Drawing::Point(40, 31);
+			this->ArtworkOnArtPage->Name = L"ArtworkOnArtPage";
+			this->ArtworkOnArtPage->Size = System::Drawing::Size(450, 357);
+			this->ArtworkOnArtPage->TabIndex = 0;
 			// 
-			// textBox1
+			// TitleOfArt
 			// 
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 22, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TitleOfArt->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->TitleOfArt->Font = (gcnew System::Drawing::Font(L"Segoe UI", 22, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(536, 43);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(417, 59);
-			this->textBox1->TabIndex = 1;
-			this->textBox1->Text = L"The Wounded Angel";
+			this->TitleOfArt->Location = System::Drawing::Point(536, 43);
+			this->TitleOfArt->Name = L"TitleOfArt";
+			this->TitleOfArt->Size = System::Drawing::Size(417, 59);
+			this->TitleOfArt->TabIndex = 1;
+			this->TitleOfArt->Text = L"The Wounded Angel";
 			// 
-			// textBox2
+			// ByArtistFixed
 			// 
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ByArtistFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->ByArtistFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(526, 157);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(104, 42);
-			this->textBox2->TabIndex = 2;
-			this->textBox2->Text = L"Artist:";
+			this->ByArtistFixed->Location = System::Drawing::Point(526, 157);
+			this->ByArtistFixed->Multiline = true;
+			this->ByArtistFixed->Name = L"ByArtistFixed";
+			this->ByArtistFixed->Size = System::Drawing::Size(104, 42);
+			this->ByArtistFixed->TabIndex = 2;
+			this->ByArtistFixed->Text = L"Artist:";
 			// 
-			// textBox3
+			// ArtistName
 			// 
-			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ArtistName->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->ArtistName->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(658, 157);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(228, 43);
-			this->textBox3->TabIndex = 3;
-			this->textBox3->Text = L"Hugo Simberg";
+			this->ArtistName->Location = System::Drawing::Point(658, 157);
+			this->ArtistName->Name = L"ArtistName";
+			this->ArtistName->Size = System::Drawing::Size(228, 43);
+			this->ArtistName->TabIndex = 3;
+			this->ArtistName->Text = L"Hugo Simberg";
 			// 
-			// textBox4
+			// DateofArtFixed
 			// 
-			this->textBox4->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DateofArtFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->DateofArtFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(526, 205);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(206, 43);
-			this->textBox4->TabIndex = 4;
-			this->textBox4->Text = L"Creation Date:";
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox4_TextChanged);
+			this->DateofArtFixed->Location = System::Drawing::Point(526, 205);
+			this->DateofArtFixed->Name = L"DateofArtFixed";
+			this->DateofArtFixed->Size = System::Drawing::Size(206, 43);
+			this->DateofArtFixed->TabIndex = 4;
+			this->DateofArtFixed->Text = L"Creation Date:";
+			this->DateofArtFixed->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox4_TextChanged);
 			// 
-			// textBox5
+			// DateCreated
 			// 
-			this->textBox5->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DateCreated->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->DateCreated->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(753, 205);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(228, 43);
-			this->textBox5->TabIndex = 5;
-			this->textBox5->Text = L"1903";
-			this->textBox5->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox5_TextChanged);
+			this->DateCreated->Location = System::Drawing::Point(748, 205);
+			this->DateCreated->Name = L"DateCreated";
+			this->DateCreated->Size = System::Drawing::Size(228, 43);
+			this->DateCreated->TabIndex = 5;
+			this->DateCreated->Text = L"1903";
+			this->DateCreated->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox5_TextChanged);
 			// 
-			// textBox6
+			// TypeofArtFixed
 			// 
-			this->textBox6->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TypeofArtFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->TypeofArtFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox6->Location = System::Drawing::Point(526, 254);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(104, 43);
-			this->textBox6->TabIndex = 6;
-			this->textBox6->Text = L"Type:";
-			this->textBox6->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox6_TextChanged);
+			this->TypeofArtFixed->Location = System::Drawing::Point(526, 254);
+			this->TypeofArtFixed->Name = L"TypeofArtFixed";
+			this->TypeofArtFixed->Size = System::Drawing::Size(104, 43);
+			this->TypeofArtFixed->TabIndex = 6;
+			this->TypeofArtFixed->Text = L"Type:";
+			this->TypeofArtFixed->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox6_TextChanged);
 			// 
-			// textBox7
+			// TypeOfArt
 			// 
-			this->textBox7->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TypeOfArt->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->TypeOfArt->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox7->Location = System::Drawing::Point(658, 254);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(228, 43);
-			this->textBox7->TabIndex = 7;
-			this->textBox7->Text = L"symbolism";
-			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox7_TextChanged);
+			this->TypeOfArt->Location = System::Drawing::Point(658, 254);
+			this->TypeOfArt->Name = L"TypeOfArt";
+			this->TypeOfArt->Size = System::Drawing::Size(228, 43);
+			this->TypeOfArt->TabIndex = 7;
+			this->TypeOfArt->Text = L"symbolism";
+			this->TypeOfArt->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox7_TextChanged);
 			// 
-			// textBox8
+			// PriceOfArt
 			// 
-			this->textBox8->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox8->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PriceOfArt->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->PriceOfArt->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox8->Location = System::Drawing::Point(526, 318);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(121, 43);
-			this->textBox8->TabIndex = 8;
-			this->textBox8->Text = L"Price:";
+			this->PriceOfArt->Location = System::Drawing::Point(526, 318);
+			this->PriceOfArt->Name = L"PriceOfArt";
+			this->PriceOfArt->Size = System::Drawing::Size(121, 43);
+			this->PriceOfArt->TabIndex = 8;
+			this->PriceOfArt->Text = L"Price:";
 			// 
-			// textBox9
+			// Price
 			// 
-			this->textBox9->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Price->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->Price->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox9->Location = System::Drawing::Point(653, 318);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(218, 43);
-			this->textBox9->TabIndex = 9;
-			this->textBox9->Text = L"345,890";
+			this->Price->Location = System::Drawing::Point(653, 318);
+			this->Price->Name = L"Price";
+			this->Price->Size = System::Drawing::Size(218, 43);
+			this->Price->TabIndex = 9;
+			this->Price->Text = L"345,890";
+			// 
+			// LikeArt
+			// 
+			this->LikeArt->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->LikeArt->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"LikeArt.BackgroundImage")));
+			this->LikeArt->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->LikeArt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->LikeArt->Location = System::Drawing::Point(940, 59);
+			this->LikeArt->Name = L"LikeArt";
+			this->LikeArt->Size = System::Drawing::Size(55, 43);
+			this->LikeArt->TabIndex = 10;
+			this->LikeArt->UseVisualStyleBackColor = false;
 			// 
 			// MyForm1
 			// 
@@ -192,16 +218,17 @@ namespace ArtGallery {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1064, 414);
-			this->Controls->Add(this->textBox9);
-			this->Controls->Add(this->textBox8);
-			this->Controls->Add(this->textBox7);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->LikeArt);
+			this->Controls->Add(this->Price);
+			this->Controls->Add(this->PriceOfArt);
+			this->Controls->Add(this->TypeOfArt);
+			this->Controls->Add(this->TypeofArtFixed);
+			this->Controls->Add(this->DateCreated);
+			this->Controls->Add(this->DateofArtFixed);
+			this->Controls->Add(this->ArtistName);
+			this->Controls->Add(this->ByArtistFixed);
+			this->Controls->Add(this->TitleOfArt);
+			this->Controls->Add(this->ArtworkOnArtPage);
 			this->Name = L"MyForm1";
 			this->Text = L"MyForm1";
 			this->ResumeLayout(false);
