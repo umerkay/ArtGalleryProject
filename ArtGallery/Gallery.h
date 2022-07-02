@@ -1,5 +1,6 @@
 #pragma once
 #include "User.h"
+#include "ArtWork.h"
 
 class Gallery {
 private:
@@ -7,6 +8,9 @@ private:
 	User* currUser;
 	int totalUsers;
 	bool userHasAuthenticated;
+
+	ArtWork* ArtWorks;
+	int totalArtWorks;
 
 	//user related
 	int findUserID(string);
@@ -24,6 +28,7 @@ public:
 	void logoutUser();
 
 	//artwork related
+	ArtWork* getArtWorkByID(int);
 
 	//artist related
 };

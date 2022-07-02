@@ -62,6 +62,7 @@ namespace ArtGallery {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
 			this->welcomeMsg = (gcnew System::Windows::Forms::Label());
 			this->logoutbtn = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
@@ -89,6 +90,8 @@ namespace ArtGallery {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(282, 253);
 			this->Controls->Add(this->logoutbtn);
 			this->Controls->Add(this->welcomeMsg);
@@ -101,7 +104,9 @@ namespace ArtGallery {
 		}
 #pragma endregion
 	private: System::Void Home_Load(System::Object^ sender, System::EventArgs^ e) {
-		welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
+		//welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
+		welcomeMsg->Text = "Artwork available: " + gcnew String(GalleryApp->getArtWorkByID(0)->getTitle().c_str());
+
 	}
 	private: System::Void logoutbtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		GalleryApp->logoutUser();

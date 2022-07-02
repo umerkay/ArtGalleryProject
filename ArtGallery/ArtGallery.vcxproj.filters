@@ -36,6 +36,9 @@
     <ClCompile Include="init.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArtWork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auth.h">
@@ -53,13 +56,20 @@
     <ClInclude Include="OOPLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArtWork.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Users.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="ArtWorks.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Text.txt" />
+    <Text Include="state.txt" />
   </ItemGroup>
 </Project>

@@ -122,6 +122,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArtWork.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="Gallery.cpp" />
     <ClCompile Include="Home.cpp" />
@@ -131,6 +132,7 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArtWork.h" />
     <ClInclude Include="Auth.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -150,12 +152,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ArtWorks.csv" />
     <None Include="Users.csv">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="state.txt" />
     <Text Include="Text.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
