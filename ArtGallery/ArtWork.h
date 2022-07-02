@@ -1,8 +1,7 @@
 #pragma once
 #include <string>
+#include"Artist.h"
 using namespace std;
-
-class Artist;
 
 class ArtWork {
 private:
@@ -15,4 +14,5 @@ private:
 public:
 	void setData(int, string, string, string, int /*, Artist* creator*/);
 	string getTitle();
+	int get_id();
 };

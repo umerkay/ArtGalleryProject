@@ -1,22 +1,21 @@
 #include<list>
 #include"Gallery.h"
 #include"Cart.h"
+#include"ArtWork.h"
 using namespace std;
 
-class Cart {
-	list<Artwork*> ArtworksAdded{};
-public: 
-	Artwork* AddArtwork(Artwork*);
-	void removeArt(int);
-	};
-Artwork* Cart::AddArtwork(Artwork* NewArtW) {
+void Cart::AddArtWork(ArtWork* NewArtW) {
 	ArtworksAdded.push_front(NewArtW);
 }
 void Cart::removeArt(int id) {
-	list<int>::iterator it;
-	for (it = g.begin(); it != g.end(); ++it) {
-		if (id == it->getId()) {
-			
+	list<ArtWork*>::iterator it;
+	for (it = ArtworksAdded.begin(); it != ArtworksAdded.end(); ++it) {
+		if (id == (*it)->get_id()) {
+			it = ArtworksAdded.erase(it);
+			break;
+		}
+		else {
+			it++;
 		}
 	}
 

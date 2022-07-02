@@ -1,9 +1,10 @@
 #pragma once
 #include<list>
+#include"ArtWork.h"
 using namespace std;
 class Cart {
-	list<Artwork*> ArtworksAdded{};
+	list<ArtWork*> ArtworksAdded{};
 public:
-	Artwork* AddArtwork(Artwork*);
+	void AddArtWork(ArtWork*);
 	void removeArt(int);
 };
