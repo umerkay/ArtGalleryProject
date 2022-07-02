@@ -63,6 +63,37 @@ void Gallery::loadData() {
 		Users[i].setData(row[1], row[2], row[3], row[4]);
 		i++;
 	}
+	//artist related
+	std::ifstream file2("Artists.csv");
+
+totalArtists = 0;
+
+vector <string>  row2;
+string line2, word2, temp2;
+
+while (std::getline(file2, temp2))
+++totalArtists;
+
+Artists = new Artist[totalArtists + 1];
+
+int i2 = 0;
+
+std::ifstream fileR2("Artists.csv");
+
+while (i2 < totalArtists) {
+
+	row2.clear();
+	getline(fileR2, line2);
+	stringstream s2(line2);
+	while (getline(s2, word2, ',')) {
+		row2.push_back(word2);
+	}
+
+	Artists[i2] = *(new Artist());
+	//Artists[i].setID(i);
+	Artists[i2].setData(stoi(row2[0]), row2[1], row2[2], stoi(row2[3]), row2[4]);
+	i2++;
+}
 }
 
 string Gallery::signUpUser(string username, string password, string name, string gender) {
@@ -93,4 +124,8 @@ void Gallery::logoutUser() {
 
 User* Gallery::getCurrUser() {
 	return currUser;
+}
+//artist related
+Artist* Gallery::getArtistbyID(int id) {
+	return &Artists[id];
 }

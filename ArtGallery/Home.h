@@ -101,7 +101,8 @@ namespace ArtGallery {
 		}
 #pragma endregion
 	private: System::Void Home_Load(System::Object^ sender, System::EventArgs^ e) {
-		welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
+		//welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
+		//welcomeMsg->Text = "Artist avalilable " + gcnew String(GalleryApp->getArtistbyID(0)->get_name().c_str());
 	}
 	private: System::Void logoutbtn_Click(System::Object^ sender, System::EventArgs^ e) {
 		GalleryApp->logoutUser();
