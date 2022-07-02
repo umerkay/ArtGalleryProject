@@ -1,10 +1,14 @@
 #pragma once
 #include <string>
+#include"ArtWork.h"
+#include"Cart.h"
 using namespace std;
 
 class User {
 public:
-	User() {};
+	User();
+	void addToCart(ArtWork*);
+	void removeFromCart();
 	void setData(string, string, string, string);
 	void setID(int id);
 
@@ -15,4 +19,5 @@ public:
 private:
 	string name, password, gender, username;
 	int id;
+	Cart* mycart;
 };

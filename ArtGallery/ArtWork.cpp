@@ -11,3 +11,6 @@ void ArtWork::setData(int id, string title, string typeOfArt, string creationDat
 string ArtWork::getTitle() {
 	return title;
 }
+int ArtWork::get_id() {
+	return id;
+}
