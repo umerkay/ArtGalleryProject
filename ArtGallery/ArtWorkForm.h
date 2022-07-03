@@ -15,7 +15,7 @@ namespace ArtGallery {
 	public ref class ArtWorkForm : public System::Windows::Forms::Form
 	{
 	public:
-		ArtWorkForm(void)
+		ArtWorkForm(ArtWork* A)
 		{
 			InitializeComponent();
 			//
