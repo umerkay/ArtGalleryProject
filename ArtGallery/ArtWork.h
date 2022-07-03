@@ -10,9 +10,12 @@ private:
 	Artist* creator;
 	string creationDate;
 	int price;
+	string img;
 
 public:
-	void setData(int, string, string, string, int /*, Artist* creator*/);
+	void setData(int, string, string, string, int, Artist*);
+	string getImg();
 	string getTitle();
+	Artist* getCreator();
 	int get_id();
 };

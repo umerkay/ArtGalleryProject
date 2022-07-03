@@ -20,9 +20,14 @@ void main()
 	AuthForm.setDataStore(GalleryApp);
 	ArtGallery::Home HomeForm;
 	HomeForm.setDataStore(GalleryApp);
-	Application::Run(% AuthForm);
+
+	if (GalleryApp->getUserHasAuthenticated() == false) {
+		Application::Run(% AuthForm);
+	}
 
 	if (GalleryApp->getUserHasAuthenticated() == true) {
 		Application::Run(% HomeForm);
 	}
+
+	GalleryApp->closedCallback();
 }

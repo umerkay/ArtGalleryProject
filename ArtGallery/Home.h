@@ -1,5 +1,6 @@
 //#include "OOPLogic.h"
 #include "Gallery.h"
+#include "ArtWorkForm.h"
 
 namespace ArtGallery {
 
@@ -17,6 +18,11 @@ namespace ArtGallery {
 	public ref class Home : public System::Windows::Forms::Form
 	{
 	Gallery* GalleryApp;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::PictureBox^ pictureBox5;
+			int artWPagen = 0;
+			int total;
 	public:
 		Home(void)
 		{
@@ -41,46 +47,27 @@ namespace ArtGallery {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ SearchBox;
+	private: System::Windows::Forms::TextBox^ SearchText;
 	protected:
 
-	private: System::Windows::Forms::Button^ LogOut;
-	private: System::Windows::Forms::Button^ BackArrow;
 	protected:
-
-
-	private: System::Windows::Forms::Button^ ForwardArrow;
-
-	private: System::Windows::Forms::PictureBox^ Artwork1;
-
-	private: System::Windows::Forms::PictureBox^ Artwork2;
-
-	private: System::Windows::Forms::PictureBox^ Artwork3;
-	private: System::Windows::Forms::TextBox^ WelcomeFixed;
-
-
-
-
-
-	private: System::Windows::Forms::TextBox^ Username;
-	private: System::Windows::Forms::PictureBox^ Artwork4;
-	private: System::Windows::Forms::PictureBox^ Artwork5;
-	private: System::Windows::Forms::PictureBox^ Rec1;
-	private: System::Windows::Forms::PictureBox^ Rec2;
-	private: System::Windows::Forms::PictureBox^ Rec3;
-	private: System::Windows::Forms::PictureBox^ Rec4;
-	private: System::Windows::Forms::PictureBox^ Rec5;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
 
 
 
 
 
 
-
-
-
-
-
+	private: System::Windows::Forms::Label^ welcomeMsg;
+	private: System::Windows::Forms::Label^ artWLbl1;
+	private: System::Windows::Forms::Label^ artWLbl4;
+	private: System::Windows::Forms::Label^ artWLbl3;
+	private: System::Windows::Forms::Label^ artWLbl2;
+	private: System::Windows::Forms::Label^ artWLbl5;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 
 
@@ -105,70 +92,52 @@ namespace ArtGallery {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Home::typeid));
-			this->SearchBox = (gcnew System::Windows::Forms::TextBox());
-			this->LogOut = (gcnew System::Windows::Forms::Button());
-			this->BackArrow = (gcnew System::Windows::Forms::Button());
-			this->ForwardArrow = (gcnew System::Windows::Forms::Button());
-			this->Artwork1 = (gcnew System::Windows::Forms::PictureBox());
-			this->Artwork2 = (gcnew System::Windows::Forms::PictureBox());
-			this->Artwork3 = (gcnew System::Windows::Forms::PictureBox());
-			this->WelcomeFixed = (gcnew System::Windows::Forms::TextBox());
-			this->Username = (gcnew System::Windows::Forms::TextBox());
-			this->Artwork4 = (gcnew System::Windows::Forms::PictureBox());
-			this->Artwork5 = (gcnew System::Windows::Forms::PictureBox());
-			this->Rec1 = (gcnew System::Windows::Forms::PictureBox());
-			this->Rec2 = (gcnew System::Windows::Forms::PictureBox());
-			this->Rec3 = (gcnew System::Windows::Forms::PictureBox());
-			this->Rec4 = (gcnew System::Windows::Forms::PictureBox());
-			this->Rec5 = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec5))->BeginInit();
+			this->SearchText = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->welcomeMsg = (gcnew System::Windows::Forms::Label());
+			this->artWLbl1 = (gcnew System::Windows::Forms::Label());
+			this->artWLbl4 = (gcnew System::Windows::Forms::Label());
+			this->artWLbl3 = (gcnew System::Windows::Forms::Label());
+			this->artWLbl2 = (gcnew System::Windows::Forms::Label());
+			this->artWLbl5 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// SearchBox
+			// SearchText
 			// 
-			this->SearchBox->BackColor = System::Drawing::Color::White;
-			this->SearchBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->SearchBox->Location = System::Drawing::Point(859, 107);
-			this->SearchBox->Name = L"SearchBox";
-			this->SearchBox->Size = System::Drawing::Size(339, 19);
-			this->SearchBox->TabIndex = 2;
-			this->SearchBox->Text = L"Search box";
-			// 
-			// LogOut
-			// 
-			this->LogOut->BackColor = System::Drawing::Color::Black;
-			this->LogOut->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->LogOut->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->LogOut->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->LogOut->Location = System::Drawing::Point(1140, 12);
-			this->LogOut->Name = L"LogOut";
-			this->LogOut->Size = System::Drawing::Size(130, 59);
-			this->LogOut->TabIndex = 3;
-			this->LogOut->Text = L"Log Out";
-			this->LogOut->UseVisualStyleBackColor = false;
+			this->SearchText->BackColor = System::Drawing::Color::White;
+			this->SearchText->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->SearchText->Location = System::Drawing::Point(846, 114);
+			this->SearchText->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->SearchText->Name = L"SearchText";
+			this->SearchText->Size = System::Drawing::Size(301, 15);
+			this->SearchText->TabIndex = 2;
+			this->SearchText->Text = L"Search Artworks";
 			// 
 			// BackArrow
 			// 
-			this->BackArrow->BackColor = System::Drawing::Color::Transparent;
-			this->BackArrow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BackArrow.BackgroundImage")));
-			this->BackArrow->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->BackArrow->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->BackArrow->Location = System::Drawing::Point(58, 257);
-			this->BackArrow->Name = L"BackArrow";
-			this->BackArrow->Size = System::Drawing::Size(75, 77);
-			this->BackArrow->TabIndex = 4;
-			this->BackArrow->UseVisualStyleBackColor = false;
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button1->Location = System::Drawing::Point(1204, 11);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(90, 36);
+			this->button1->TabIndex = 3;
+			this->button1->Text = L"LogOut";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Home::logoutBtn);
 			// 
 			// ForwardArrow
 			// 
@@ -177,35 +146,14 @@ namespace ArtGallery {
 			this->ForwardArrow->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ForwardArrow->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ForwardArrow->Location = System::Drawing::Point(1195, 257);
-			this->ForwardArrow->Name = L"ForwardArrow";
-			this->ForwardArrow->Size = System::Drawing::Size(75, 77);
-			this->ForwardArrow->TabIndex = 5;
-			this->ForwardArrow->UseVisualStyleBackColor = false;
-			// 
-			// Artwork1
-			// 
-			this->Artwork1->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Artwork1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork1.BackgroundImage")));
-			this->Artwork1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Artwork1->Location = System::Drawing::Point(139, 203);
-			this->Artwork1->Name = L"Artwork1";
-			this->Artwork1->Size = System::Drawing::Size(205, 167);
-			this->Artwork1->TabIndex = 6;
-			this->Artwork1->TabStop = false;
-			// 
-			// Artwork2
-			// 
-			this->Artwork2->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Artwork2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork2.BackgroundImage")));
-			this->Artwork2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Artwork2->Location = System::Drawing::Point(350, 203);
-			this->Artwork2->Name = L"Artwork2";
-			this->Artwork2->Size = System::Drawing::Size(213, 167);
-			this->Artwork2->TabIndex = 7;
-			this->Artwork2->TabStop = false;
-			// 
-			// Artwork3
+			this->button2->Location = System::Drawing::Point(66, 267);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(67, 53);
+			this->button2->TabIndex = 4;
+			this->button2->Text = L"<-";
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Home::button2_Click);
 			// 
 			this->Artwork3->BackColor = System::Drawing::SystemColors::ButtonFace;
 			this->Artwork3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork3.BackgroundImage")));
@@ -237,161 +185,219 @@ namespace ArtGallery {
 			this->Username->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->Username->Font = (gcnew System::Drawing::Font(L"Segoe UI", 28, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Username->ForeColor = System::Drawing::SystemColors::InactiveBorder;
-			this->Username->Location = System::Drawing::Point(388, 28);
-			this->Username->Multiline = true;
-			this->Username->Name = L"Username";
-			this->Username->Size = System::Drawing::Size(376, 79);
-			this->Username->TabIndex = 15;
-			this->Username->Text = L"MANAHIL";
-			this->Username->TextChanged += gcnew System::EventHandler(this, &Home::textBox3_TextChanged);
+			this->button3->Location = System::Drawing::Point(1215, 287);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(67, 53);
+			this->button3->TabIndex = 5;
+			this->button3->Text = L"->";
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Home::button3_Click);
 			// 
-			// Artwork4
+			// welcomeMsg
 			// 
-			this->Artwork4->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Artwork4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork4.BackgroundImage")));
-			this->Artwork4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Artwork4->Location = System::Drawing::Point(784, 203);
-			this->Artwork4->Name = L"Artwork4";
-			this->Artwork4->Size = System::Drawing::Size(204, 167);
-			this->Artwork4->TabIndex = 16;
-			this->Artwork4->TabStop = false;
-			this->Artwork4->Click += gcnew System::EventHandler(this, &Home::pictureBox7_Click);
+			this->welcomeMsg->AutoSize = true;
+			this->welcomeMsg->Location = System::Drawing::Point(63, 53);
+			this->welcomeMsg->Name = L"welcomeMsg";
+			this->welcomeMsg->Size = System::Drawing::Size(44, 16);
+			this->welcomeMsg->TabIndex = 12;
+			this->welcomeMsg->Text = L"label1";
 			// 
-			// Artwork5
+			// artWLbl1
 			// 
-			this->Artwork5->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Artwork5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork5.BackgroundImage")));
-			this->Artwork5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Artwork5->Location = System::Drawing::Point(994, 203);
-			this->Artwork5->Name = L"Artwork5";
-			this->Artwork5->Size = System::Drawing::Size(204, 167);
-			this->Artwork5->TabIndex = 17;
-			this->Artwork5->TabStop = false;
-			this->Artwork5->Click += gcnew System::EventHandler(this, &Home::pictureBox9_Click);
+			this->artWLbl1->AutoSize = true;
+			this->artWLbl1->Location = System::Drawing::Point(159, 360);
+			this->artWLbl1->Name = L"artWLbl1";
+			this->artWLbl1->Size = System::Drawing::Size(44, 16);
+			this->artWLbl1->TabIndex = 13;
+			this->artWLbl1->Text = L"label1";
 			// 
-			// Rec1
+			// artWLbl4
 			// 
-			this->Rec1->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Rec1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec1.BackgroundImage")));
-			this->Rec1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Rec1->Location = System::Drawing::Point(139, 454);
-			this->Rec1->Name = L"Rec1";
-			this->Rec1->Size = System::Drawing::Size(205, 167);
-			this->Rec1->TabIndex = 18;
-			this->Rec1->TabStop = false;
+			this->artWLbl4->AutoSize = true;
+			this->artWLbl4->Location = System::Drawing::Point(762, 360);
+			this->artWLbl4->Name = L"artWLbl4";
+			this->artWLbl4->Size = System::Drawing::Size(44, 16);
+			this->artWLbl4->TabIndex = 14;
+			this->artWLbl4->Text = L"label1";
 			// 
-			// Rec2
+			// artWLbl3
 			// 
-			this->Rec2->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Rec2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec2.BackgroundImage")));
-			this->Rec2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Rec2->Location = System::Drawing::Point(350, 454);
-			this->Rec2->Name = L"Rec2";
-			this->Rec2->Size = System::Drawing::Size(213, 167);
-			this->Rec2->TabIndex = 19;
-			this->Rec2->TabStop = false;
+			this->artWLbl3->AutoSize = true;
+			this->artWLbl3->Location = System::Drawing::Point(591, 360);
+			this->artWLbl3->Name = L"artWLbl3";
+			this->artWLbl3->Size = System::Drawing::Size(44, 16);
+			this->artWLbl3->TabIndex = 15;
+			this->artWLbl3->Text = L"label1";
 			// 
-			// Rec3
+			// artWLbl2
 			// 
-			this->Rec3->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Rec3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec3.BackgroundImage")));
-			this->Rec3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Rec3->Location = System::Drawing::Point(569, 454);
-			this->Rec3->Name = L"Rec3";
-			this->Rec3->Size = System::Drawing::Size(209, 167);
-			this->Rec3->TabIndex = 20;
-			this->Rec3->TabStop = false;
-			this->Rec3->Click += gcnew System::EventHandler(this, &Home::pictureBox6_Click);
+			this->artWLbl2->AutoSize = true;
+			this->artWLbl2->Location = System::Drawing::Point(393, 360);
+			this->artWLbl2->Name = L"artWLbl2";
+			this->artWLbl2->Size = System::Drawing::Size(44, 16);
+			this->artWLbl2->TabIndex = 16;
+			this->artWLbl2->Text = L"label1";
 			// 
-			// Rec4
+			// artWLbl5
 			// 
-			this->Rec4->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Rec4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec4.BackgroundImage")));
-			this->Rec4->Location = System::Drawing::Point(784, 454);
-			this->Rec4->Name = L"Rec4";
-			this->Rec4->Size = System::Drawing::Size(204, 167);
-			this->Rec4->TabIndex = 21;
-			this->Rec4->TabStop = false;
-			this->Rec4->Click += gcnew System::EventHandler(this, &Home::pictureBox8_Click);
+			this->artWLbl5->AutoSize = true;
+			this->artWLbl5->Location = System::Drawing::Point(900, 360);
+			this->artWLbl5->Name = L"artWLbl5";
+			this->artWLbl5->Size = System::Drawing::Size(44, 16);
+			this->artWLbl5->TabIndex = 17;
+			this->artWLbl5->Text = L"label1";
 			// 
-			// Rec5
+			// pictureBox1
 			// 
-			this->Rec5->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->Rec5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Rec5.BackgroundImage")));
-			this->Rec5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->Rec5->Location = System::Drawing::Point(994, 454);
-			this->Rec5->Name = L"Rec5";
-			this->Rec5->Size = System::Drawing::Size(204, 167);
-			this->Rec5->TabIndex = 22;
-			this->Rec5->TabStop = false;
-			this->Rec5->Click += gcnew System::EventHandler(this, &Home::pictureBox10_Click);
+			this->pictureBox1->Location = System::Drawing::Point(162, 234);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(116, 106);
+			this->pictureBox1->TabIndex = 18;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &Home::pictureBox1_Click);
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->Location = System::Drawing::Point(396, 234);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(116, 106);
+			this->pictureBox2->TabIndex = 19;
+			this->pictureBox2->TabStop = false;
+			this->pictureBox2->Click += gcnew System::EventHandler(this, &Home::pictureBox2_Click);
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->Location = System::Drawing::Point(594, 234);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(116, 106);
+			this->pictureBox3->TabIndex = 20;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &Home::pictureBox3_Click);
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->Location = System::Drawing::Point(765, 234);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(116, 106);
+			this->pictureBox4->TabIndex = 21;
+			this->pictureBox4->TabStop = false;
+			this->pictureBox4->Click += gcnew System::EventHandler(this, &Home::pictureBox4_Click);
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->Location = System::Drawing::Point(903, 234);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(116, 106);
+			this->pictureBox5->TabIndex = 22;
+			this->pictureBox5->TabStop = false;
+			this->pictureBox5->Click += gcnew System::EventHandler(this, &Home::pictureBox5_Click);
 			// 
 			// Home
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1344, 712);
-			this->Controls->Add(this->Rec5);
-			this->Controls->Add(this->Rec4);
-			this->Controls->Add(this->Rec3);
-			this->Controls->Add(this->Rec2);
-			this->Controls->Add(this->Rec1);
-			this->Controls->Add(this->Artwork5);
-			this->Controls->Add(this->Artwork4);
-			this->Controls->Add(this->Username);
-			this->Controls->Add(this->WelcomeFixed);
-			this->Controls->Add(this->Artwork3);
-			this->Controls->Add(this->Artwork2);
-			this->Controls->Add(this->Artwork1);
-			this->Controls->Add(this->ForwardArrow);
-			this->Controls->Add(this->BackArrow);
-			this->Controls->Add(this->LogOut);
-			this->Controls->Add(this->SearchBox);
-			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
+			this->ClientSize = System::Drawing::Size(1348, 721);
+			this->Controls->Add(this->pictureBox5);
+			this->Controls->Add(this->pictureBox4);
+			this->Controls->Add(this->pictureBox3);
+			this->Controls->Add(this->pictureBox2);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->artWLbl5);
+			this->Controls->Add(this->artWLbl2);
+			this->Controls->Add(this->artWLbl3);
+			this->Controls->Add(this->artWLbl4);
+			this->Controls->Add(this->artWLbl1);
+			this->Controls->Add(this->welcomeMsg);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->SearchText);
 			this->Name = L"Home";
 			this->Text = L"Home";
 			this->Load += gcnew System::EventHandler(this, &Home::Home_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Artwork5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rec5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void Home_Load(System::Object^ sender, System::EventArgs^ e) {
-		//welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
+		welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
 		//welcomeMsg->Text = "Artwork available: " + gcnew String(GalleryApp->getArtWorkByID(0)->getTitle().c_str());
+		
+		renderLatestAW();
 
 		//welcomeMsg->Text = "Artist avalilable " + gcnew String(GalleryApp->getArtistbyID(0)->get_name().c_str());
 	}
-	private: System::Void logoutbtn_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	private: System::Void renderLatestAW() {
+
+		total = GalleryApp->getTotalArtWorks();
+
+		ArtWork* AW = GalleryApp->getArtWorkByID(artWPagen % total);
+		artWLbl1->Text = gcnew String(AW->getTitle().c_str());
+		pictureBox1->ImageLocation = gcnew String(AW->getImg().c_str());
+
+		AW = GalleryApp->getArtWorkByID((artWPagen + 1) % total);
+		artWLbl2->Text = gcnew String(AW->getTitle().c_str());
+		pictureBox2->ImageLocation = gcnew String(AW->getImg().c_str());
+
+		AW = GalleryApp->getArtWorkByID((artWPagen + 2) % total);
+		artWLbl3->Text = gcnew String(AW->getTitle().c_str());
+		pictureBox3->ImageLocation = gcnew String(AW->getImg().c_str());
+
+		AW = GalleryApp->getArtWorkByID((artWPagen + 3) % total);
+		artWLbl4->Text = gcnew String(AW->getTitle().c_str());
+		pictureBox4->ImageLocation = gcnew String(AW->getImg().c_str());
+
+		AW = GalleryApp->getArtWorkByID((artWPagen + 4) % total);
+		artWLbl5->Text = gcnew String(AW->getTitle().c_str());
+		pictureBox5->ImageLocation = gcnew String(AW->getImg().c_str());
+	}
+
+	private: System::Void logoutBtn(System::Object^ sender, System::EventArgs^ e) {
 		GalleryApp->logoutUser();
 		this->Close();
 	}
-	private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->artWPagen++;
+		renderLatestAW();
 	}
-private: System::Void pictureBox7_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox9_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox8_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void pictureBox10_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->artWPagen <= 0) return;
+		this->artWPagen--;
+		renderLatestAW();
+	}
+	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+		ArtWorkForm^ A = gcnew ArtWorkForm(GalleryApp->getArtWorkByID((artWPagen) % total));
+		A->Show();
+	}
+
+	private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+		ArtWorkForm^ A = gcnew ArtWorkForm(GalleryApp->getArtWorkByID((artWPagen + 1) % total));
+		A->Show();
+	}
+
+	private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+		ArtWorkForm^ A = gcnew ArtWorkForm(GalleryApp->getArtWorkByID((artWPagen + 2) % total));
+		A->Show();
+	}
+
+	private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArgs^ e) {
+		ArtWorkForm^ A = gcnew ArtWorkForm(GalleryApp->getArtWorkByID((artWPagen + 3) % total));
+		A->Show();
+	}
+
+	private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
+		ArtWorkForm^ A = gcnew ArtWorkForm(GalleryApp->getArtWorkByID((artWPagen + 4) % total));
+		A->Show();
+	}
 };
 }

@@ -13,6 +13,7 @@ public:
 	void setID(int id);
 
 	string getUsername();
+	int getID();
 
 	bool authenticate(string, string); //checks if pw == username
 

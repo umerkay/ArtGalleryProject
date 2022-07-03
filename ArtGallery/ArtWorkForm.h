@@ -1,4 +1,5 @@
 #pragma once
+#include "ArtWork.h"
 
 namespace ArtGallery {
 
@@ -10,17 +11,16 @@ namespace ArtGallery {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm1
+	/// Summary for ArtWorkForm
 	/// </summary>
 	public ref class ArtWorkForm : public System::Windows::Forms::Form
 	{
+		ArtWork* artWork;
 	public:
 		ArtWorkForm(ArtWork* A)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			artWork = A;
 		}
 
 	protected:
@@ -238,6 +238,11 @@ namespace ArtGallery {
 
 		}
 #pragma endregion
+	private: System::Void ArtWorkForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		label1->Text = gcnew String(artWork->getTitle().c_str());
+		label2->Text = "by " + gcnew String(artWork->getCreator()->get_name().c_str());
+	}
+	};
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {

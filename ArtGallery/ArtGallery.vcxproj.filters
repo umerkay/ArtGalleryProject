@@ -30,6 +30,7 @@
     <None Include="ArtWorks.csv" />
     <None Include="Artists.csv" />
     <None Include="Users.csv" />
+    <None Include="Users.json" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="state.txt" />

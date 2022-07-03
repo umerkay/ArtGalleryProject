@@ -35,9 +35,13 @@ public:
 
 	//artwork related
 	ArtWork* getArtWorkByID(int);
+	int getTotalArtWorks();
 
 	//artist related functions
 	Artist* getArtistbyID(int id);
+
+
+	void closedCallback();
 
 };
 

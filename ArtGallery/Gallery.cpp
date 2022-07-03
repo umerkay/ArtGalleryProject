@@ -4,10 +4,44 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+
 using namespace std;
 
+void Gallery::closedCallback() {
+	std::fstream file;
+
+	file.open("state.txt", std::ios::out | std::ofstream::trunc);
+	if (userHasAuthenticated == false) {
+		file << "false";
+	}
+	else {
+		file << this->currUser->getID();
+	}
+	file.close();
+}
+
 void Gallery::loadData() {
+	userHasAuthenticated = false;
 	//load users
+
+	//using json = nlohmann::json;
+	//json j;
+	//std::ifstream ifs("Users.json");
+	
+	///ifs >> j;
+	//ifs.close();
+
+	// int i = 0;
+	// for (auto& _userit : _users.GetArray()) {
+        //Users[0] = *(new User());
+		//Users[0].setID(0);
+
+		//json _user = j["Users"][0];
+		
+		//Users[0].setData(_user["username"], _user["password"], _user["name"], _user["gender"]);
+		// i++;
+	// }
+
 	std::ifstream file("Users.csv");
 
 	//calculate total users
@@ -27,6 +61,7 @@ void Gallery::loadData() {
 	std::ifstream fileR("Users.csv");
 
 	while (i < totalUsers) {
+		//if (i == 0) { i++; continue; }
 		//create objects from all of the csv data
 		row.clear();
 		getline(fileR, line);
@@ -40,6 +75,39 @@ void Gallery::loadData() {
 		Users[i].setData(row[1], row[2], row[3], row[4]);
 		i++;
 	}
+
+	//artist related
+	std::ifstream file2("Artists.csv");
+
+	totalArtists = 0;
+
+	vector <string>  row2;
+	string line2, word2, temp2;
+
+	while (std::getline(file2, temp2))
+		++totalArtists;
+
+	Artists = new Artist[totalArtists + 1];
+
+	int i2 = 0;
+
+	std::ifstream fileR2("Artists.csv");
+
+	while (i2 < totalArtists) {
+
+		row2.clear();
+		getline(fileR2, line2);
+		stringstream s2(line2);
+		while (getline(s2, word2, ',')) {
+			row2.push_back(word2);
+		}
+
+		Artists[i2] = *(new Artist());
+		//Artists[i].setID(i);
+		Artists[i2].setData(stoi(row2[0]), row2[1], row2[2], stoi(row2[3]), row2[4]);
+		i2++;
+	}
+
 	//load artworks
 	std::ifstream file3("ArtWorks.csv");
 
@@ -69,8 +137,19 @@ void Gallery::loadData() {
 		}
 
 		ArtWorks[i3] = *(new ArtWork());
-		ArtWorks[i3].setData(stoi(row3[0]), row3[1], row3[2], row3[3], stoi(row3[4]));
+		ArtWorks[i3].setData(stoi(row3[0]), row3[1], row3[2], row3[3], stoi(row3[4]), getArtistbyID(stoi(row3[5])));
 		i3++;
+	}
+
+	std::ifstream file0("state.txt");
+
+	string temp0;
+
+	while (std::getline(file0, temp0)) {
+		if (temp0 != "false") {
+			currUser = &Users[stoi(temp0)];
+			userHasAuthenticated = true;
+		}
 	}
 }
 
@@ -102,37 +181,10 @@ string Gallery::signInUser(string username, string password) {
 
 bool Gallery::getUserHasAuthenticated() {
 	return userHasAuthenticated;
-	//artist related
-	std::ifstream file2("Artists.csv");
-
-totalArtists = 0;
-
-vector <string>  row2;
-string line2, word2, temp2;
-
-while (std::getline(file2, temp2))
-++totalArtists;
-
-Artists = new Artist[totalArtists + 1];
-
-int i2 = 0;
-
-std::ifstream fileR2("Artists.csv");
-
-while (i2 < totalArtists) {
-
-	row2.clear();
-	getline(fileR2, line2);
-	stringstream s2(line2);
-	while (getline(s2, word2, ',')) {
-		row2.push_back(word2);
-	}
-
-	Artists[i2] = *(new Artist());
-	//Artists[i].setID(i);
-	Artists[i2].setData(stoi(row2[0]), row2[1], row2[2], stoi(row2[3]), row2[4]);
-	i2++;
 }
+
+int Gallery::getTotalArtWorks() {
+	return totalArtWorks;
 }
 
 string Gallery::signUpUser(string username, string password, string name, string gender) {
@@ -143,13 +195,13 @@ string Gallery::signUpUser(string username, string password, string name, string
 	}
 
 	std::fstream file;
-	file.open("Users.csv", std::ios::out | std::ios::app);
-
 	Users[totalUsers] = *(new User());
 	Users[totalUsers].setID(totalUsers);
 	Users[totalUsers].setData(username, password, name, gender);
 
+	file.open("Users.csv", std::ios::out | std::ios::app);
 	file << "\n" << totalUsers << "," << username << "," << password << "," << name << "," << gender;
+	file.close();
 
 	totalUsers += 1;
 
@@ -157,8 +209,14 @@ string Gallery::signUpUser(string username, string password, string name, string
 }
 
 void Gallery::logoutUser() {
-	currUser = nullptr;
 	userHasAuthenticated = false;
+	std::fstream file;
+
+	file.open("state.txt", std::ios::out | std::ofstream::trunc);
+	file << "false";
+	file.close();
+	currUser = nullptr;
+
 }
 
 User* Gallery::getCurrUser() {
