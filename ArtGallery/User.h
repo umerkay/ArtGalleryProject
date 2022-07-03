@@ -6,19 +6,21 @@ using namespace std;
 
 class User {
 public:
-	User();
 	void addToCart(ArtWork*);
-	void removeFromCart();
 	void setData(string, string, string, string);
 	void setID(int id);
 
 	string getUsername();
 	int getID();
+	Cart* getCart();
+	void setCart(Cart*);
+	Cart* mycart;
+	void removeFromCart(int);
+	void emptyCart();
 
 	bool authenticate(string, string); //checks if pw == username
 
 private:
 	string name, password, gender, username;
 	int id;
-	Cart* mycart;
 };

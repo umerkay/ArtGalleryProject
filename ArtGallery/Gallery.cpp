@@ -7,6 +7,16 @@
 
 using namespace std;
 
+void Gallery::saveOrder(Order* o) {
+	std::fstream file;
+
+	file.open("Orders.csv", std::ios::out | std::ofstream::app);
+	
+	file << o->userID << "," << o->date << "," << o->contact << "," << o->comments << "," << o->address;
+
+	file.close();
+}
+
 void Gallery::closedCallback() {
 	std::fstream file;
 
@@ -149,6 +159,8 @@ void Gallery::loadData() {
 		if (temp0 != "false") {
 			currUser = &Users[stoi(temp0)];
 			userHasAuthenticated = true;
+			Cart* c = new Cart();
+			currUser->setCart(c);
 		}
 	}
 }
@@ -172,6 +184,8 @@ string Gallery::signInUser(string username, string password) {
 	if (Users[UserID].authenticate(username, password) == true) {
 		currUser = &Users[UserID];
 		userHasAuthenticated = true;
+		Cart* c = new Cart();
+		currUser->setCart(c);
 		return "OK";
 	}
 	else {

@@ -12,6 +12,19 @@ void ArtWork::setData(int id, string title, string typeOfArt, string creationDat
 	this->creator = A;
 };
 
+int ArtWork::getPrice(){
+	return price;
+};
+
+string ArtWork::getCreationDate(){
+	return creationDate;
+};
+
+string ArtWork::getTypeOfArt(){
+	return typeOfArt;
+};
+
+
 string ArtWork::getImg() {
 	return img;
 }

@@ -13,6 +13,8 @@
     <ClCompile Include="User.cpp" />
     <ClCompile Include="ArtistForm.cpp" />
     <ClCompile Include="ArtWorkForm.cpp" />
+    <ClCompile Include="CartForm.cpp" />
+    <ClCompile Include="Order.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArtWork.h" />
@@ -25,12 +27,15 @@
     <ClInclude Include="User.h" />
     <ClInclude Include="ArtistForm.h" />
     <ClInclude Include="ArtWorkForm.h" />
+    <ClInclude Include="CartForm.h" />
+    <ClInclude Include="Order.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArtWorks.csv" />
     <None Include="Artists.csv" />
     <None Include="Users.csv" />
     <None Include="Users.json" />
+    <None Include="Orders.csv" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="state.txt" />

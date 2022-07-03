@@ -3,9 +3,6 @@
 #include"ArtWork.h"
 using namespace std;
 //default constructor
-User::User()  {
-	Cart* mycart = new Cart ;
-}
 
 void User::setID(int id) {
 	this->id = id;
@@ -13,6 +10,14 @@ void User::setID(int id) {
 
 int User::getID() {
 	return id;
+}
+
+Cart* User::getCart() {
+	return mycart;
+}
+
+void User::setCart(Cart* c) {
+	this->mycart = c;
 }
 
 void User::setData(string username, string password, string name, string gender) {
@@ -24,6 +29,7 @@ void User::setData(string username, string password, string name, string gender)
 
 string User::getUsername() {
 	return username;
+	//return std::to_string(mycart->getNoOfItems());
 }
 
 bool User::authenticate(string username, string password) {
@@ -34,6 +40,10 @@ void User::addToCart(ArtWork* a1) {
 	mycart->AddArtWork( a1);
 }
 //remove from art
-void User::removeFromCart() {
+void User::removeFromCart(int id) {
 	mycart->removeArt(id);
+}
+
+void User::emptyCart() {
+	mycart->empty();
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "Artist.h"
 
 namespace ArtGallery {
 
@@ -15,12 +16,11 @@ namespace ArtGallery {
 	public ref class ArtistForm : public System::Windows::Forms::Form
 	{
 	public:
-		ArtistForm(void)
+		Artist* artist;
+		ArtistForm(Artist* A)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			artist = A;
 		}
 
 	protected:
@@ -34,17 +34,24 @@ namespace ArtGallery {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::TextBox^ NameOfArtist;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	protected:
+	private: System::Windows::Forms::Label^ ArtistName;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+
+
 	protected:
 
-	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::TextBox^ ArtistBirthPlace;
 
-	private: System::Windows::Forms::TextBox^ Age;
-	private: System::Windows::Forms::TextBox^ StyleOfArtist;
+
+
+
+
+
+
 
 
 
@@ -64,123 +71,121 @@ namespace ArtGallery {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ArtistForm::typeid));
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->NameOfArtist = (gcnew System::Windows::Forms::TextBox());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->ArtistBirthPlace = (gcnew System::Windows::Forms::TextBox());
-			this->Age = (gcnew System::Windows::Forms::TextBox());
-			this->StyleOfArtist = (gcnew System::Windows::Forms::TextBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->ArtistName = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// panel1
+			// pictureBox1
 			// 
-			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel1->Location = System::Drawing::Point(92, 44);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(221, 173);
-			this->panel1->TabIndex = 0;
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox1->Location = System::Drawing::Point(33, 38);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(281, 357);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 9;
+			this->pictureBox1->TabStop = false;
 			// 
-			// NameOfArtist
+			// ArtistName
 			// 
-			this->NameOfArtist->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->NameOfArtist->Font = (gcnew System::Drawing::Font(L"Segoe UI", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ArtistName->AutoSize = true;
+			this->ArtistName->BackColor = System::Drawing::Color::Transparent;
+			this->ArtistName->Font = (gcnew System::Drawing::Font(L"Raleway", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->NameOfArtist->Location = System::Drawing::Point(354, 44);
-			this->NameOfArtist->Multiline = true;
-			this->NameOfArtist->Name = L"NameOfArtist";
-			this->NameOfArtist->Size = System::Drawing::Size(261, 69);
-			this->NameOfArtist->TabIndex = 1;
-			this->NameOfArtist->Text = L"Van Gogh";
+			this->ArtistName->ForeColor = System::Drawing::Color::White;
+			this->ArtistName->Location = System::Drawing::Point(338, 65);
+			this->ArtistName->Name = L"ArtistName";
+			this->ArtistName->Size = System::Drawing::Size(189, 52);
+			this->ArtistName->TabIndex = 10;
+			this->ArtistName->Text = L"Van Gogh";
 			// 
-			// panel2
+			// label2
 			// 
-			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel2->Location = System::Drawing::Point(143, 261);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(240, 129);
-			this->panel2->TabIndex = 2;
-			// 
-			// panel3
-			// 
-			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
-			this->panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel3->Location = System::Drawing::Point(423, 261);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(249, 129);
-			this->panel3->TabIndex = 3;
-			// 
-			// panel4
-			// 
-			this->panel4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel4.BackgroundImage")));
-			this->panel4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel4->Location = System::Drawing::Point(694, 261);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(248, 129);
-			this->panel4->TabIndex = 4;
-			// 
-			// ArtistBirthPlace
-			// 
-			this->ArtistBirthPlace->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->ArtistBirthPlace->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ArtistBirthPlace->Location = System::Drawing::Point(364, 136);
-			this->ArtistBirthPlace->Multiline = true;
-			this->ArtistBirthPlace->Name = L"ArtistBirthPlace";
-			this->ArtistBirthPlace->Size = System::Drawing::Size(433, 32);
-			this->ArtistBirthPlace->TabIndex = 5;
-			this->ArtistBirthPlace->Text = L"BornVincent Willem van Gogh · 30 Mar";
+			this->label2->ForeColor = System::Drawing::Color::White;
+			this->label2->Location = System::Drawing::Point(342, 174);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(67, 28);
+			this->label2->TabIndex = 11;
+			this->label2->Text = L"label2";
 			// 
-			// Age
+			// label3
 			// 
-			this->Age->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->Age->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Age->Location = System::Drawing::Point(364, 174);
-			this->Age->Name = L"Age";
-			this->Age->Size = System::Drawing::Size(538, 22);
-			this->Age->TabIndex = 7;
-			this->Age->Text = L"37";
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->Location = System::Drawing::Point(342, 228);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(68, 28);
+			this->label3->TabIndex = 12;
+			this->label3->Text = L"label3";
 			// 
-			// StyleOfArtist
+			// label4
 			// 
-			this->StyleOfArtist->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->StyleOfArtist->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->StyleOfArtist->Location = System::Drawing::Point(364, 202);
-			this->StyleOfArtist->Name = L"StyleOfArtist";
-			this->StyleOfArtist->Size = System::Drawing::Size(538, 22);
-			this->StyleOfArtist->TabIndex = 8;
-			this->StyleOfArtist->Text = L"Known forPainting, drawing still life, portraits and landscapes";
+			this->label4->ForeColor = System::Drawing::Color::White;
+			this->label4->Location = System::Drawing::Point(342, 282);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(68, 28);
+			this->label4->TabIndex = 13;
+			this->label4->Text = L"label4";
 			// 
-			// MyForm
+			// label5
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::White;
+			this->label5->Location = System::Drawing::Point(342, 340);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(68, 28);
+			this->label5->TabIndex = 14;
+			this->label5->Text = L"label5";
+			// 
+			// ArtistForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1034, 429);
-			this->Controls->Add(this->StyleOfArtist);
-			this->Controls->Add(this->Age);
-			this->Controls->Add(this->ArtistBirthPlace);
-			this->Controls->Add(this->panel4);
-			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->NameOfArtist);
-			this->Controls->Add(this->panel1);
-			this->Name = L"MyForm";
+			this->ClientSize = System::Drawing::Size(705, 427);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->ArtistName);
+			this->Controls->Add(this->pictureBox1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Name = L"ArtistForm";
 			this->Text = L"Artist";
 			this->Load += gcnew System::EventHandler(this, &ArtistForm::MyForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		pictureBox1->ImageLocation = gcnew String(artist->getImg().c_str());
+		ArtistName->Text = "" + gcnew String(artist->get_name().c_str());
+		label2->Text = "Age: " + artist->get_age();
+		label3->Text = "Birthplace: " + gcnew String(artist->get_bornplace().c_str());
+		label4->Text = "Style of Art: " + gcnew String(artist->get_StyleArt().c_str());
+		label5->Text = "Birthplace: " + gcnew String(artist->get_bornplace().c_str());
 	}
 };
 }

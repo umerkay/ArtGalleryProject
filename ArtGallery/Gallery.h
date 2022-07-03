@@ -1,7 +1,8 @@
 #pragma once
 #include "User.h"
 #include "ArtWork.h"
-#include"Artist.h"
+#include "Artist.h"
+#include "Order.h"
 
 class Gallery {
 private:
@@ -40,6 +41,8 @@ public:
 	//artist related functions
 	Artist* getArtistbyID(int id);
 
+	//order related
+	void saveOrder(Order*);
 
 	void closedCallback();
 

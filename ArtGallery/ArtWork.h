@@ -16,6 +16,9 @@ public:
 	void setData(int, string, string, string, int, Artist*);
 	string getImg();
 	string getTitle();
+	int getPrice();
+	string getCreationDate();
+	string getTypeOfArt();
 	Artist* getCreator();
 	int get_id();
 };

@@ -123,8 +123,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtWork.cpp" />
-    <ClCompile Include="ArtWorkForm.cpp" />
     <ClCompile Include="Auth.cpp" />
+    <ClCompile Include="CartForm.cpp" />
     <ClCompile Include="Gallery.cpp" />
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="init.h" />
@@ -134,6 +134,7 @@
     <ClCompile Include="OOPLogic.cpp" />
     <ClCompile Include="Artist.cpp" />
     <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="Order.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Auth.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CartForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Gallery.h" />
@@ -153,10 +157,8 @@
     <ClInclude Include="ArtistForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ArtWorkForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="OOPLogic.h" />
+    <ClInclude Include="Order.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,19 +168,20 @@
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CartForm.resx">
+      <DependentUpon>CartForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ArtistForm.resx">
       <DependentUpon>ArtistForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArtWorkForm.resx">
-      <DependentUpon>ArtWorkForm.h</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="ArtWorks.csv" />
     <None Include="Artists.csv" />
+    <None Include="Orders.csv" />
     <None Include="Users.csv">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>

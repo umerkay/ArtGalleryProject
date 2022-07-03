@@ -1,5 +1,7 @@
 #pragma once
 #include "ArtWork.h"
+#include "ArtistForm.h"
+#include "Gallery.h"
 
 namespace ArtGallery {
 
@@ -16,11 +18,16 @@ namespace ArtGallery {
 	public ref class ArtWorkForm : public System::Windows::Forms::Form
 	{
 		ArtWork* artWork;
+		Gallery* GalleryApp;
 	public:
 		ArtWorkForm(ArtWork* A)
 		{
 			InitializeComponent();
 			artWork = A;
+		}
+
+		void setDataStore(Gallery* DataStore) {
+			this->GalleryApp = DataStore;
 		}
 
 	protected:
@@ -34,29 +41,31 @@ namespace ArtGallery {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ ArtworkOnArtPage;
-	protected:
-
-	private: System::Windows::Forms::TextBox^ TitleOfArt;
-	private: System::Windows::Forms::TextBox^ ByArtistFixed;
 
 	protected:
 
+	private: System::Windows::Forms::Label^ TitleOfArt;
+	private: System::Windows::Forms::Label^ ByArtistFixed;
 
-	private: System::Windows::Forms::TextBox^ ArtistName;
-	private: System::Windows::Forms::TextBox^ DateofArtFixed;
-
-
-	private: System::Windows::Forms::TextBox^ DateCreated;
-	private: System::Windows::Forms::TextBox^ TypeofArtFixed;
+	protected:
 
 
-	private: System::Windows::Forms::TextBox^ TypeOfArt;
-	private: System::Windows::Forms::TextBox^ PriceOfArt;
+	private: System::Windows::Forms::Label^ ArtistName;
+	private: System::Windows::Forms::Label^ DateofArtFixed;
 
 
-	private: System::Windows::Forms::TextBox^ Price;
-	private: System::Windows::Forms::Button^ LikeArt;
+	private: System::Windows::Forms::Label^ DateCreated;
+	private: System::Windows::Forms::Label^ TypeofArtFixed;
+
+
+	private: System::Windows::Forms::Label^ TypeOfArt;
+	private: System::Windows::Forms::Label^ PriceOfArt;
+
+
+	private: System::Windows::Forms::Label^ Price;
+
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Button^ button1;
 
 
 	private:
@@ -72,154 +81,173 @@ namespace ArtGallery {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ArtWorkForm::typeid));
-			this->ArtworkOnArtPage = (gcnew System::Windows::Forms::Panel());
-			this->TitleOfArt = (gcnew System::Windows::Forms::TextBox());
-			this->ByArtistFixed = (gcnew System::Windows::Forms::TextBox());
-			this->ArtistName = (gcnew System::Windows::Forms::TextBox());
-			this->DateofArtFixed = (gcnew System::Windows::Forms::TextBox());
-			this->DateCreated = (gcnew System::Windows::Forms::TextBox());
-			this->TypeofArtFixed = (gcnew System::Windows::Forms::TextBox());
-			this->TypeOfArt = (gcnew System::Windows::Forms::TextBox());
-			this->PriceOfArt = (gcnew System::Windows::Forms::TextBox());
-			this->Price = (gcnew System::Windows::Forms::TextBox());
-			this->LikeArt = (gcnew System::Windows::Forms::Button());
+			this->TitleOfArt = (gcnew System::Windows::Forms::Label());
+			this->ByArtistFixed = (gcnew System::Windows::Forms::Label());
+			this->ArtistName = (gcnew System::Windows::Forms::Label());
+			this->DateofArtFixed = (gcnew System::Windows::Forms::Label());
+			this->DateCreated = (gcnew System::Windows::Forms::Label());
+			this->TypeofArtFixed = (gcnew System::Windows::Forms::Label());
+			this->TypeOfArt = (gcnew System::Windows::Forms::Label());
+			this->PriceOfArt = (gcnew System::Windows::Forms::Label());
+			this->Price = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// ArtworkOnArtPage
-			// 
-			this->ArtworkOnArtPage->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ArtworkOnArtPage.BackgroundImage")));
-			this->ArtworkOnArtPage->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ArtworkOnArtPage->Location = System::Drawing::Point(40, 31);
-			this->ArtworkOnArtPage->Name = L"ArtworkOnArtPage";
-			this->ArtworkOnArtPage->Size = System::Drawing::Size(450, 357);
-			this->ArtworkOnArtPage->TabIndex = 0;
 			// 
 			// TitleOfArt
 			// 
-			this->TitleOfArt->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TitleOfArt->Font = (gcnew System::Drawing::Font(L"Segoe UI", 22, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TitleOfArt->BackColor = System::Drawing::Color::Transparent;
+			this->TitleOfArt->Font = (gcnew System::Drawing::Font(L"Raleway", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TitleOfArt->Location = System::Drawing::Point(536, 43);
+			this->TitleOfArt->ForeColor = System::Drawing::Color::White;
+			this->TitleOfArt->Location = System::Drawing::Point(16, 434);
+			this->TitleOfArt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->TitleOfArt->Name = L"TitleOfArt";
-			this->TitleOfArt->Size = System::Drawing::Size(417, 59);
+			this->TitleOfArt->Size = System::Drawing::Size(667, 49);
 			this->TitleOfArt->TabIndex = 1;
 			this->TitleOfArt->Text = L"The Wounded Angel";
 			// 
 			// ByArtistFixed
 			// 
-			this->ByArtistFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->ByArtistFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ByArtistFixed->BackColor = System::Drawing::Color::Transparent;
+			this->ByArtistFixed->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ByArtistFixed->Location = System::Drawing::Point(526, 157);
-			this->ByArtistFixed->Multiline = true;
+			this->ByArtistFixed->ForeColor = System::Drawing::Color::White;
+			this->ByArtistFixed->Location = System::Drawing::Point(21, 528);
+			this->ByArtistFixed->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ByArtistFixed->Name = L"ByArtistFixed";
-			this->ByArtistFixed->Size = System::Drawing::Size(104, 42);
+			this->ByArtistFixed->Size = System::Drawing::Size(92, 34);
 			this->ByArtistFixed->TabIndex = 2;
 			this->ByArtistFixed->Text = L"Artist:";
 			// 
 			// ArtistName
 			// 
-			this->ArtistName->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->ArtistName->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ArtistName->BackColor = System::Drawing::Color::Transparent;
+			this->ArtistName->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->ArtistName->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ArtistName->Location = System::Drawing::Point(658, 157);
+			this->ArtistName->ForeColor = System::Drawing::Color::White;
+			this->ArtistName->Location = System::Drawing::Point(171, 528);
+			this->ArtistName->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ArtistName->Name = L"ArtistName";
-			this->ArtistName->Size = System::Drawing::Size(228, 43);
+			this->ArtistName->Size = System::Drawing::Size(512, 36);
 			this->ArtistName->TabIndex = 3;
-			this->ArtistName->Text = L"Hugo Simberg";
+			this->ArtistName->Text = L"Van Gogh";
+			this->ArtistName->Click += gcnew System::EventHandler(this, &ArtWorkForm::ArtistName_Click);
 			// 
 			// DateofArtFixed
 			// 
-			this->DateofArtFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->DateofArtFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DateofArtFixed->BackColor = System::Drawing::Color::Transparent;
+			this->DateofArtFixed->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DateofArtFixed->Location = System::Drawing::Point(526, 205);
+			this->DateofArtFixed->ForeColor = System::Drawing::Color::White;
+			this->DateofArtFixed->Location = System::Drawing::Point(21, 566);
+			this->DateofArtFixed->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->DateofArtFixed->Name = L"DateofArtFixed";
-			this->DateofArtFixed->Size = System::Drawing::Size(206, 43);
+			this->DateofArtFixed->Size = System::Drawing::Size(183, 36);
 			this->DateofArtFixed->TabIndex = 4;
 			this->DateofArtFixed->Text = L"Creation Date:";
-			this->DateofArtFixed->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox4_TextChanged);
 			// 
 			// DateCreated
 			// 
-			this->DateCreated->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->DateCreated->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->DateCreated->BackColor = System::Drawing::Color::Transparent;
+			this->DateCreated->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->DateCreated->Location = System::Drawing::Point(748, 205);
+			this->DateCreated->ForeColor = System::Drawing::Color::White;
+			this->DateCreated->Location = System::Drawing::Point(171, 565);
+			this->DateCreated->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->DateCreated->Name = L"DateCreated";
-			this->DateCreated->Size = System::Drawing::Size(228, 43);
+			this->DateCreated->Size = System::Drawing::Size(203, 36);
 			this->DateCreated->TabIndex = 5;
 			this->DateCreated->Text = L"1903";
-			this->DateCreated->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox5_TextChanged);
 			// 
 			// TypeofArtFixed
 			// 
-			this->TypeofArtFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TypeofArtFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TypeofArtFixed->BackColor = System::Drawing::Color::Transparent;
+			this->TypeofArtFixed->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TypeofArtFixed->Location = System::Drawing::Point(526, 254);
+			this->TypeofArtFixed->ForeColor = System::Drawing::Color::White;
+			this->TypeofArtFixed->Location = System::Drawing::Point(21, 605);
+			this->TypeofArtFixed->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->TypeofArtFixed->Name = L"TypeofArtFixed";
-			this->TypeofArtFixed->Size = System::Drawing::Size(104, 43);
+			this->TypeofArtFixed->Size = System::Drawing::Size(92, 36);
 			this->TypeofArtFixed->TabIndex = 6;
 			this->TypeofArtFixed->Text = L"Type:";
-			this->TypeofArtFixed->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox6_TextChanged);
 			// 
 			// TypeOfArt
 			// 
-			this->TypeOfArt->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->TypeOfArt->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TypeOfArt->BackColor = System::Drawing::Color::Transparent;
+			this->TypeOfArt->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->TypeOfArt->Location = System::Drawing::Point(658, 254);
+			this->TypeOfArt->ForeColor = System::Drawing::Color::White;
+			this->TypeOfArt->Location = System::Drawing::Point(171, 605);
+			this->TypeOfArt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->TypeOfArt->Name = L"TypeOfArt";
-			this->TypeOfArt->Size = System::Drawing::Size(228, 43);
+			this->TypeOfArt->Size = System::Drawing::Size(512, 36);
 			this->TypeOfArt->TabIndex = 7;
 			this->TypeOfArt->Text = L"symbolism";
-			this->TypeOfArt->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox7_TextChanged);
 			// 
 			// PriceOfArt
 			// 
-			this->PriceOfArt->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->PriceOfArt->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PriceOfArt->BackColor = System::Drawing::Color::Transparent;
+			this->PriceOfArt->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->PriceOfArt->Location = System::Drawing::Point(526, 318);
+			this->PriceOfArt->ForeColor = System::Drawing::Color::White;
+			this->PriceOfArt->Location = System::Drawing::Point(21, 644);
+			this->PriceOfArt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->PriceOfArt->Name = L"PriceOfArt";
-			this->PriceOfArt->Size = System::Drawing::Size(121, 43);
+			this->PriceOfArt->Size = System::Drawing::Size(108, 36);
 			this->PriceOfArt->TabIndex = 8;
 			this->PriceOfArt->Text = L"Price:";
 			// 
 			// Price
 			// 
-			this->Price->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->Price->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Price->BackColor = System::Drawing::Color::Transparent;
+			this->Price->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Price->Location = System::Drawing::Point(653, 318);
+			this->Price->ForeColor = System::Drawing::Color::White;
+			this->Price->Location = System::Drawing::Point(171, 644);
+			this->Price->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Price->Name = L"Price";
-			this->Price->Size = System::Drawing::Size(218, 43);
+			this->Price->Size = System::Drawing::Size(194, 36);
 			this->Price->TabIndex = 9;
 			this->Price->Text = L"345,890";
 			// 
-			// LikeArt
+			// pictureBox1
 			// 
-			this->LikeArt->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->LikeArt->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"LikeArt.BackgroundImage")));
-			this->LikeArt->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->LikeArt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->LikeArt->ForeColor = System::Drawing::SystemColors::Control;
-			this->LikeArt->Location = System::Drawing::Point(940, 59);
-			this->LikeArt->Name = L"LikeArt";
-			this->LikeArt->Size = System::Drawing::Size(55, 43);
-			this->LikeArt->TabIndex = 10;
-			this->LikeArt->UseVisualStyleBackColor = false;
+			this->pictureBox1->Location = System::Drawing::Point(25, 27);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(658, 376);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 11;
+			this->pictureBox1->TabStop = false;
 			// 
-			// MyForm1
+			// button1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->button1->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(539, 637);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(144, 43);
+			this->button1->TabIndex = 12;
+			this->button1->Text = L"Add to Cart";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &ArtWorkForm::button1_Click);
+			// 
+			// ArtWorkForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1064, 414);
-			this->Controls->Add(this->LikeArt);
+			this->ClientSize = System::Drawing::Size(705, 721);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->Price);
 			this->Controls->Add(this->PriceOfArt);
 			this->Controls->Add(this->TypeOfArt);
@@ -229,29 +257,39 @@ namespace ArtGallery {
 			this->Controls->Add(this->ArtistName);
 			this->Controls->Add(this->ByArtistFixed);
 			this->Controls->Add(this->TitleOfArt);
-			this->Controls->Add(this->ArtworkOnArtPage);
-			this->Name = L"MyForm1";
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Name = L"ArtWorkForm";
 			this->Text = L"ArtWork";
-			this->Load += gcnew System::EventHandler(this, &ArtWorkForm::MyForm1_Load);
+			this->Load += gcnew System::EventHandler(this, &ArtWorkForm::ArtWorkForm_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void ArtWorkForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		label1->Text = gcnew String(artWork->getTitle().c_str());
-		label2->Text = "by " + gcnew String(artWork->getCreator()->get_name().c_str());
+		TitleOfArt->Text = gcnew String(artWork->getTitle().c_str());
+		ArtistName->Text = gcnew String(artWork->getCreator()->get_name().c_str());
+		pictureBox1->ImageLocation = gcnew String(artWork->getImg().c_str());
+		DateCreated->Text = gcnew String(artWork->getPrice().ToString());
+		if (GalleryApp->getCurrUser()->getCart()->contains(artWork)) {
+			button1->Text = "Added";
+		}
 	}
-	};
-	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void ArtistName_Click(System::Object^ sender, System::EventArgs^ e) {
+	ArtistForm^ AF = gcnew ArtistForm(artWork->getCreator());
+	this->Hide();
+	AF->ShowDialog();
+	this->Show();
+}
+private: System::Void ArtworkOnArtPage_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (GalleryApp->getCurrUser()->getCart()->contains(artWork)) {
+		MessageBox::Show("Already added to Cart", "Alert");
 	}
-private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
+	GalleryApp->getCurrUser()->addToCart(artWork);
+	button1->Text = "Added";
 }
 };
 }
