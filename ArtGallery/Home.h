@@ -125,7 +125,7 @@ namespace ArtGallery {
 			this->SearchText->TabIndex = 2;
 			this->SearchText->Text = L"Search Artworks";
 			// 
-			// button1
+			// BackArrow
 			// 
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -139,10 +139,12 @@ namespace ArtGallery {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Home::logoutBtn);
 			// 
-			// button2
+			// ForwardArrow
 			// 
-			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ForwardArrow->BackColor = System::Drawing::Color::Transparent;
+			this->ForwardArrow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ForwardArrow.BackgroundImage")));
+			this->ForwardArrow->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ForwardArrow->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->Location = System::Drawing::Point(66, 267);
 			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -153,10 +155,35 @@ namespace ArtGallery {
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Home::button2_Click);
 			// 
-			// button3
+			this->Artwork3->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->Artwork3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Artwork3.BackgroundImage")));
+			this->Artwork3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Artwork3->Location = System::Drawing::Point(569, 203);
+			this->Artwork3->Name = L"Artwork3";
+			this->Artwork3->Size = System::Drawing::Size(209, 167);
+			this->Artwork3->TabIndex = 8;
+			this->Artwork3->TabStop = false;
+			this->Artwork3->Click += gcnew System::EventHandler(this, &Home::pictureBox3_Click);
 			// 
-			this->button3->BackColor = System::Drawing::Color::Transparent;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			// WelcomeFixed
+			// 
+			this->WelcomeFixed->BackColor = System::Drawing::SystemColors::MenuText;
+			this->WelcomeFixed->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->WelcomeFixed->Font = (gcnew System::Drawing::Font(L"Segoe UI", 28, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->WelcomeFixed->ForeColor = System::Drawing::SystemColors::InactiveBorder;
+			this->WelcomeFixed->Location = System::Drawing::Point(111, 28);
+			this->WelcomeFixed->Multiline = true;
+			this->WelcomeFixed->Name = L"WelcomeFixed";
+			this->WelcomeFixed->Size = System::Drawing::Size(320, 82);
+			this->WelcomeFixed->TabIndex = 12;
+			this->WelcomeFixed->Text = L"WELCOME";
+			// 
+			// Username
+			// 
+			this->Username->BackColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->Username->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->Username->Font = (gcnew System::Drawing::Font(L"Segoe UI", 28, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->Location = System::Drawing::Point(1215, 287);
 			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);

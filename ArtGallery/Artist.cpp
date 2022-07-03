@@ -1,7 +1,8 @@
 #include<string>
 #include<iostream>
-#include"Artist.h"
+#include"Artist.h"	
 
+	//setter function,uses this pointer to set data of current artist object
 void Artist::setData( int iD, string name, string birthplace, int age, string StyleArt) {
 	this->name = name;
 	this->id = iD;
@@ -9,6 +10,7 @@ void Artist::setData( int iD, string name, string birthplace, int age, string St
 	this->age = age;
 	this->StyleArt = StyleArt;
 }
+	//getter function definitions
 string Artist::get_name() {
 	return name;
 }
