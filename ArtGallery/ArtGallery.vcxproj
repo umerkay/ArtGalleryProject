@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArtWork.cpp" />
+    <ClCompile Include="ArtWorkForm.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="Gallery.cpp" />
     <ClCompile Include="Home.cpp" />
@@ -135,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArtWork.h" />
+    <ClInclude Include="ArtWorkForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Auth.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -148,6 +152,9 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ArtWorkForm.resx">
+      <DependentUpon>ArtWorkForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.h</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +169,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </None>
+    <None Include="Users.json" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="state.txt" />

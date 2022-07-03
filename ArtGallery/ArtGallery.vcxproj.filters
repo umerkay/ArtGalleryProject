@@ -1,90 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="ArtWork.cpp" />
+    <ClCompile Include="Auth.cpp" />
+    <ClCompile Include="Gallery.cpp" />
+    <ClCompile Include="Home.cpp" />
+    <ClCompile Include="init.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="OOPLogic.cpp" />
+    <ClCompile Include="Artist.cpp" />
+    <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="ArtWorkForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Auth.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Home.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Gallery.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="User.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="OOPLogic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="init.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ArtWork.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Artist.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="ArtWork.h" />
+    <ClInclude Include="Auth.h" />
+    <ClInclude Include="Gallery.h" />
+    <ClInclude Include="Artist.h" />
+    <ClInclude Include="Cart.h" />
+    <ClInclude Include="Home.h" />
+    <ClInclude Include="OOPLogic.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="ArtWorkForm.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Auth.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Home.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gallery.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="User.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OOPLogic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ArtWork.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Artist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Cart.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Users.csv">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ArtWorks.csv">
-      <Filter>Resource Files</Filter>
-    </None>
+    <None Include="ArtWorks.csv" />
     <None Include="Artists.csv" />
-      <Filter>Resource Files</Filter>
-    </None>
+    <None Include="Users.csv" />
+    <None Include="Users.json" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Text.txt" />
     <Text Include="state.txt" />
+    <Text Include="Text.txt" />
   </ItemGroup>
 </Project>

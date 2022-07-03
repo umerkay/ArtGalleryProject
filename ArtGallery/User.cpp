@@ -11,6 +11,10 @@ void User::setID(int id) {
 	this->id = id;
 }
 
+int User::getID() {
+	return id;
+}
+
 void User::setData(string username, string password, string name, string gender) {
 	this->username = username;
 	this->password = password;
