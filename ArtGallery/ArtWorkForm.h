@@ -204,7 +204,8 @@ namespace ArtGallery {
 			this->LikeArt->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->LikeArt->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"LikeArt.BackgroundImage")));
 			this->LikeArt->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->LikeArt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->LikeArt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->LikeArt->ForeColor = System::Drawing::SystemColors::Control;
 			this->LikeArt->Location = System::Drawing::Point(940, 59);
 			this->LikeArt->Name = L"LikeArt";
 			this->LikeArt->Size = System::Drawing::Size(55, 43);
@@ -230,7 +231,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->TitleOfArt);
 			this->Controls->Add(this->ArtworkOnArtPage);
 			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
+			this->Text = L"ArtWork";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

@@ -14,7 +14,7 @@ private:
 	Artist* currArtist;
 	int totalArtists;
 
-
+	//artwork related
 	ArtWork* ArtWorks;
 	int totalArtWorks;
 

@@ -173,7 +173,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->NameOfArtist);
 			this->Controls->Add(this->panel1);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Artist";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
