@@ -12,10 +12,10 @@ namespace ArtGallery {
 	/// <summary>
 	/// Summary for MyForm1
 	/// </summary>
-	public ref class MyForm1 : public System::Windows::Forms::Form
+	public ref class ArtWorkForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm1(void)
+		ArtWorkForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ArtGallery {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm1()
+		~ArtWorkForm()
 		{
 			if (components)
 			{
@@ -72,7 +72,7 @@ namespace ArtGallery {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ArtWorkForm::typeid));
 			this->ArtworkOnArtPage = (gcnew System::Windows::Forms::Panel());
 			this->TitleOfArt = (gcnew System::Windows::Forms::TextBox());
 			this->ByArtistFixed = (gcnew System::Windows::Forms::TextBox());
@@ -139,7 +139,7 @@ namespace ArtGallery {
 			this->DateofArtFixed->Size = System::Drawing::Size(206, 43);
 			this->DateofArtFixed->TabIndex = 4;
 			this->DateofArtFixed->Text = L"Creation Date:";
-			this->DateofArtFixed->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox4_TextChanged);
+			this->DateofArtFixed->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox4_TextChanged);
 			// 
 			// DateCreated
 			// 
@@ -151,7 +151,7 @@ namespace ArtGallery {
 			this->DateCreated->Size = System::Drawing::Size(228, 43);
 			this->DateCreated->TabIndex = 5;
 			this->DateCreated->Text = L"1903";
-			this->DateCreated->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox5_TextChanged);
+			this->DateCreated->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox5_TextChanged);
 			// 
 			// TypeofArtFixed
 			// 
@@ -163,7 +163,7 @@ namespace ArtGallery {
 			this->TypeofArtFixed->Size = System::Drawing::Size(104, 43);
 			this->TypeofArtFixed->TabIndex = 6;
 			this->TypeofArtFixed->Text = L"Type:";
-			this->TypeofArtFixed->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox6_TextChanged);
+			this->TypeofArtFixed->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox6_TextChanged);
 			// 
 			// TypeOfArt
 			// 
@@ -175,7 +175,7 @@ namespace ArtGallery {
 			this->TypeOfArt->Size = System::Drawing::Size(228, 43);
 			this->TypeOfArt->TabIndex = 7;
 			this->TypeOfArt->Text = L"symbolism";
-			this->TypeOfArt->TextChanged += gcnew System::EventHandler(this, &MyForm1::textBox7_TextChanged);
+			this->TypeOfArt->TextChanged += gcnew System::EventHandler(this, &ArtWorkForm::textBox7_TextChanged);
 			// 
 			// PriceOfArt
 			// 
@@ -232,6 +232,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->ArtworkOnArtPage);
 			this->Name = L"MyForm1";
 			this->Text = L"ArtWork";
+			this->Load += gcnew System::EventHandler(this, &ArtWorkForm::MyForm1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -244,6 +245,8 @@ private: System::Void textBox5_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

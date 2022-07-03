@@ -11,7 +11,7 @@
     <ClCompile Include="Artist.cpp" />
     <ClCompile Include="Cart.cpp" />
     <ClCompile Include="User.cpp" />
-    <ClCompile Include="AristForm.cpp" />
+    <ClCompile Include="ArtistForm.cpp" />
     <ClCompile Include="ArtWorkForm.cpp" />
   </ItemGroup>
   <ItemGroup>

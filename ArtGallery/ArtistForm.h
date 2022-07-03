@@ -12,10 +12,10 @@ namespace ArtGallery {
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class ArtistForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		ArtistForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ArtGallery {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
+		~ArtistForm()
 		{
 			if (components)
 			{
@@ -64,7 +64,7 @@ namespace ArtGallery {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ArtistForm::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->NameOfArtist = (gcnew System::Windows::Forms::TextBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
@@ -174,10 +174,13 @@ namespace ArtGallery {
 			this->Controls->Add(this->panel1);
 			this->Name = L"MyForm";
 			this->Text = L"Artist";
+			this->Load += gcnew System::EventHandler(this, &ArtistForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
