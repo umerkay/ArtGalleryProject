@@ -129,7 +129,7 @@
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="init.h" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="AristForm.cpp" />
+    <ClCompile Include="ArtistForm.cpp" />
     <ClCompile Include="ArtWorkForm.cpp" />
     <ClCompile Include="OOPLogic.cpp" />
     <ClCompile Include="Artist.cpp" />
