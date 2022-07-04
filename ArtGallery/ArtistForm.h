@@ -168,7 +168,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->ArtistName);
 			this->Controls->Add(this->pictureBox1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ArtistForm";
 			this->Text = L"Artist";

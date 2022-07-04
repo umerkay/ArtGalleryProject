@@ -4,7 +4,7 @@
 #include"Cart.h"
 using namespace std;
 
-class User {
+class Customer {
 public:
 	void addToCart(ArtWork*);
 	void setData(string, string, string, string);

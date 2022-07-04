@@ -12,7 +12,7 @@ void Gallery::saveOrder(Order* o) {
 
 	file.open("Orders.csv", std::ios::out | std::ofstream::app);
 	
-	file << o->userID << "," << o->date << "," << o->contact << "," << o->comments << "," << o->address;
+	file << "\n" << o->userID << "," << o->date.substr(0, o->date.size() - 1) << "," << o->contact << "," << o->comments << "," << o->address;
 
 	file.close();
 }

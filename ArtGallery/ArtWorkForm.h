@@ -199,7 +199,7 @@ namespace ArtGallery {
 			this->PriceOfArt->Name = L"PriceOfArt";
 			this->PriceOfArt->Size = System::Drawing::Size(108, 36);
 			this->PriceOfArt->TabIndex = 8;
-			this->PriceOfArt->Text = L"Price:";
+			this->PriceOfArt->Text = L"Price ($):";
 			// 
 			// Price
 			// 
@@ -257,7 +257,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->ArtistName);
 			this->Controls->Add(this->ByArtistFixed);
 			this->Controls->Add(this->TitleOfArt);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ArtWorkForm";
 			this->Text = L"ArtWork";

@@ -38,6 +38,7 @@ namespace ArtGallery {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Panel^ panel1;
 		   int total;
 	public:
 		Home(void)
@@ -135,6 +136,7 @@ namespace ArtGallery {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -145,6 +147,7 @@ namespace ArtGallery {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->BeginInit();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -303,11 +306,11 @@ namespace ArtGallery {
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Raleway Medium", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Raleway ExtraLight", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(58, 239);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(67, 83);
+			this->label1->Size = System::Drawing::Size(65, 83);
 			this->label1->TabIndex = 24;
 			this->label1->Text = L"<";
 			this->label1->Click += gcnew System::EventHandler(this, &Home::button2_Click);
@@ -317,11 +320,11 @@ namespace ArtGallery {
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Raleway Medium", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Raleway ExtraLight", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(1231, 239);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(67, 83);
+			this->label2->Size = System::Drawing::Size(65, 83);
 			this->label2->TabIndex = 25;
 			this->label2->Text = L">";
 			this->label2->Click += gcnew System::EventHandler(this, &Home::button3_Click);
@@ -346,7 +349,7 @@ namespace ArtGallery {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Raleway", 19.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::Black;
-			this->label4->Location = System::Drawing::Point(91, 400);
+			this->label4->Location = System::Drawing::Point(72, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(299, 44);
 			this->label4->TabIndex = 27;
@@ -355,7 +358,7 @@ namespace ArtGallery {
 			// pictureBox6
 			// 
 			this->pictureBox6->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox6->Location = System::Drawing::Point(121, 455);
+			this->pictureBox6->Location = System::Drawing::Point(102, 55);
 			this->pictureBox6->Name = L"pictureBox6";
 			this->pictureBox6->Size = System::Drawing::Size(204, 143);
 			this->pictureBox6->TabIndex = 33;
@@ -364,7 +367,7 @@ namespace ArtGallery {
 			// pictureBox7
 			// 
 			this->pictureBox7->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox7->Location = System::Drawing::Point(1023, 455);
+			this->pictureBox7->Location = System::Drawing::Point(1004, 55);
 			this->pictureBox7->Name = L"pictureBox7";
 			this->pictureBox7->Size = System::Drawing::Size(204, 143);
 			this->pictureBox7->TabIndex = 37;
@@ -373,7 +376,7 @@ namespace ArtGallery {
 			// pictureBox8
 			// 
 			this->pictureBox8->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox8->Location = System::Drawing::Point(797, 455);
+			this->pictureBox8->Location = System::Drawing::Point(778, 55);
 			this->pictureBox8->Name = L"pictureBox8";
 			this->pictureBox8->Size = System::Drawing::Size(205, 143);
 			this->pictureBox8->TabIndex = 36;
@@ -382,7 +385,7 @@ namespace ArtGallery {
 			// pictureBox9
 			// 
 			this->pictureBox9->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox9->Location = System::Drawing::Point(572, 455);
+			this->pictureBox9->Location = System::Drawing::Point(553, 55);
 			this->pictureBox9->Name = L"pictureBox9";
 			this->pictureBox9->Size = System::Drawing::Size(206, 143);
 			this->pictureBox9->TabIndex = 35;
@@ -391,7 +394,7 @@ namespace ArtGallery {
 			// pictureBox10
 			// 
 			this->pictureBox10->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox10->Location = System::Drawing::Point(346, 455);
+			this->pictureBox10->Location = System::Drawing::Point(327, 55);
 			this->pictureBox10->Name = L"pictureBox10";
 			this->pictureBox10->Size = System::Drawing::Size(206, 143);
 			this->pictureBox10->TabIndex = 34;
@@ -403,7 +406,7 @@ namespace ArtGallery {
 			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Raleway", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1019, 606);
+			this->label5->Location = System::Drawing::Point(1000, 206);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(56, 24);
 			this->label5->TabIndex = 32;
@@ -415,7 +418,7 @@ namespace ArtGallery {
 			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Raleway", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(342, 606);
+			this->label6->Location = System::Drawing::Point(323, 206);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(56, 24);
 			this->label6->TabIndex = 31;
@@ -427,7 +430,7 @@ namespace ArtGallery {
 			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Raleway", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(568, 606);
+			this->label7->Location = System::Drawing::Point(549, 206);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(56, 24);
 			this->label7->TabIndex = 30;
@@ -439,7 +442,7 @@ namespace ArtGallery {
 			this->label8->BackColor = System::Drawing::Color::Transparent;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Raleway", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(793, 606);
+			this->label8->Location = System::Drawing::Point(774, 206);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(56, 24);
 			this->label8->TabIndex = 29;
@@ -451,11 +454,30 @@ namespace ArtGallery {
 			this->label9->BackColor = System::Drawing::Color::Transparent;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Raleway", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(116, 605);
+			this->label9->Location = System::Drawing::Point(97, 205);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(56, 24);
 			this->label9->TabIndex = 28;
 			this->label9->Text = L"label1";
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->Controls->Add(this->pictureBox6);
+			this->panel1->Controls->Add(this->pictureBox7);
+			this->panel1->Controls->Add(this->pictureBox8);
+			this->panel1->Controls->Add(this->pictureBox9);
+			this->panel1->Controls->Add(this->pictureBox10);
+			this->panel1->Controls->Add(this->label5);
+			this->panel1->Controls->Add(this->label6);
+			this->panel1->Controls->Add(this->label7);
+			this->panel1->Controls->Add(this->label8);
+			this->panel1->Controls->Add(this->label9);
+			this->panel1->Controls->Add(this->label4);
+			this->panel1->Location = System::Drawing::Point(19, 400);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1218, 244);
+			this->panel1->TabIndex = 38;
 			// 
 			// Home
 			// 
@@ -464,17 +486,7 @@ namespace ArtGallery {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1348, 721);
-			this->Controls->Add(this->pictureBox6);
-			this->Controls->Add(this->pictureBox7);
-			this->Controls->Add(this->pictureBox8);
-			this->Controls->Add(this->pictureBox9);
-			this->Controls->Add(this->pictureBox10);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->label4);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->pictureBox1);
@@ -492,7 +504,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->welcomeMsg);
 			this->Controls->Add(this->button1);
 			this->DoubleBuffered = true;
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Home";
 			this->Text = L"Home";
 			this->Load += gcnew System::EventHandler(this, &Home::Home_Load);
@@ -506,6 +518,8 @@ namespace ArtGallery {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox10))->EndInit();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -516,6 +530,7 @@ namespace ArtGallery {
 		//welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getCart()->getNoOfItems().ToString());
 		//welcomeMsg->Text = "Artwork available: " + gcnew String(GalleryApp->getArtWorkByID(0)->getTitle().c_str());
 
+		panel1->Hide();
 		renderLatestAW();
 
 		//welcomeMsg->Text = "Artist avalilable " + gcnew String(GalleryApp->getArtistbyID(0)->get_name().c_str());

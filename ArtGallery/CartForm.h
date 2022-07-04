@@ -600,7 +600,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->InName);
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"CartForm";
 			this->Text = L"CartForm";
 			this->Load += gcnew System::EventHandler(this, &CartForm::CartForm_Load);
@@ -710,14 +710,24 @@ private: System::Void remove4_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	if (GalleryApp->getCurrUser()->getCart()->getNoOfItems() == 0) {
+		MessageBox::Show("No items in your cart.", "Oops!");
+
+		return;
+	}
+
 	time_t now = time(0);
 	char* dt = ctime(&now);
-
-	Order* o = new Order(GalleryApp->getCurrUser()->getID(), STR(gcnew String(dt)), STR(InAddress->Text), STR(InComments->Text), STR(InContact->Text));
-	GalleryApp->saveOrder(o);
-	MessageBox::Show("Your order has been received and you will receive a confirmation call soon.", "Hurray!");
-	GalleryApp->getCurrUser()->emptyCart();
-	this->Close();
+	if (InAddress->Text != "" && InComments->Text != "" && InContact->Text != "") {
+		Order* o = new Order(GalleryApp->getCurrUser()->getID(), STR(gcnew String(dt)), STR(InAddress->Text), STR(InComments->Text), STR(InContact->Text));
+		GalleryApp->saveOrder(o);
+		MessageBox::Show("Your order has been received and you will receive a confirmation call soon.", "Hurray!");
+		GalleryApp->getCurrUser()->emptyCart();
+		this->Close();
+	}
+	else {
+		MessageBox::Show("Please fill in the information.", "Oops!");
+	}
 }
 };
 }
