@@ -64,7 +64,7 @@ void Gallery::loadData() {
 		++totalUsers;
 
 	//make array of total + 1 users to allow signup
-	Users = new User[totalUsers + 1];
+	Users = new Customer[totalUsers + 1];
 
 	int i = 0;
 
@@ -80,7 +80,7 @@ void Gallery::loadData() {
 			row.push_back(word);
 		}
 
-		Users[i] = *(new User());
+		Users[i] = *(new Customer());
 		Users[i].setID(i);
 		Users[i].setData(row[1], row[2], row[3], row[4]);
 		i++;
@@ -209,7 +209,7 @@ string Gallery::signUpUser(string username, string password, string name, string
 	}
 
 	std::fstream file;
-	Users[totalUsers] = *(new User());
+	Users[totalUsers] = *(new Customer());
 	Users[totalUsers].setID(totalUsers);
 	Users[totalUsers].setData(username, password, name, gender);
 
@@ -233,7 +233,7 @@ void Gallery::logoutUser() {
 
 }
 
-User* Gallery::getCurrUser() {
+Customer* Gallery::getCurrUser() {
 	return currUser;
 }
 //artist related

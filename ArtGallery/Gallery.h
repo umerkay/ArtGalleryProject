@@ -6,8 +6,8 @@
 
 class Gallery {
 private:
-	User* Users;
-	User* currUser;
+	Customer* Users;
+	Customer* currUser;
 	int totalUsers;
 	bool userHasAuthenticated;
 	//artist related
@@ -31,7 +31,7 @@ public:
 	//user related functions
 	string signUpUser(string, string, string, string); //returns message
 	string signInUser(string, string);
-	User* getCurrUser();
+	Customer* getCurrUser();
 	void logoutUser();
 
 	//artwork related

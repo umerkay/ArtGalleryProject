@@ -4,46 +4,46 @@
 using namespace std;
 //default constructor
 
-void User::setID(int id) {
+void Customer::setID(int id) {
 	this->id = id;
 }
 
-int User::getID() {
+int Customer::getID() {
 	return id;
 }
 
-Cart* User::getCart() {
+Cart* Customer::getCart() {
 	return mycart;
 }
 
-void User::setCart(Cart* c) {
+void Customer::setCart(Cart* c) {
 	this->mycart = c;
 }
 
-void User::setData(string username, string password, string name, string gender) {
+void Customer::setData(string username, string password, string name, string gender) {
 	this->username = username;
 	this->password = password;
 	this->name = name;
 	this->gender = gender;
 };
 
-string User::getUsername() {
+string Customer::getUsername() {
 	return username;
 	//return std::to_string(mycart->getNoOfItems());
 }
 
-bool User::authenticate(string username, string password) {
+bool Customer::authenticate(string username, string password) {
 	return this->username == username && this->password == password;
 }
 //add to cart
-void User::addToCart(ArtWork* a1) {
+void Customer::addToCart(ArtWork* a1) {
 	mycart->AddArtWork( a1);
 }
 //remove from art
-void User::removeFromCart(int id) {
+void Customer::removeFromCart(int id) {
 	mycart->removeArt(id);
 }
 
-void User::emptyCart() {
+void Customer::emptyCart() {
 	mycart->empty();
 }
