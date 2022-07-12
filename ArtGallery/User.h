@@ -1,26 +1,31 @@
 #pragma once
 #include <string>
 #include"ArtWork.h"
-#include"Cart.h"
 using namespace std;
 
-class Customer {
+class User {
 public:
-	void addToCart(ArtWork*);
-	void setData(string, string, string, string);
+	virtual void setData(string, string, string, string) = 0;
+
 	void setID(int id);
+	void setUsername(string);
+	void setAddress(string);
+	void setPassword(string);
+	void setName(string);
 
 	string getUsername();
 	int getID();
-	Cart* getCart();
-	void setCart(Cart*);
-	Cart* mycart;
-	void removeFromCart(int);
-	void emptyCart();
+	string getAddress();
+	string getPassword();
+	string getName();
+
+	void setIsAdmin(bool);
+	bool getIsAdmin();
 
 	bool authenticate(string, string); //checks if pw == username
 
 private:
-	string name, password, gender, username;
+	string name, password, address, username;
+	bool isAdmin;
 	int id;
 };

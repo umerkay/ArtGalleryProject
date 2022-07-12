@@ -10,11 +10,14 @@
     <ClCompile Include="OOPLogic.cpp" />
     <ClCompile Include="Artist.cpp" />
     <ClCompile Include="Cart.cpp" />
-    <ClCompile Include="User.cpp" />
+    <ClCompile Include="Customer.cpp" />
     <ClCompile Include="ArtistForm.cpp" />
     <ClCompile Include="ArtWorkForm.cpp" />
     <ClCompile Include="CartForm.cpp" />
     <ClCompile Include="Order.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArtWork.h" />
@@ -24,11 +27,14 @@
     <ClInclude Include="Cart.h" />
     <ClInclude Include="Home.h" />
     <ClInclude Include="OOPLogic.h" />
-    <ClInclude Include="User.h" />
+    <ClInclude Include="Customer.h" />
     <ClInclude Include="ArtistForm.h" />
     <ClInclude Include="ArtWorkForm.h" />
     <ClInclude Include="CartForm.h" />
     <ClInclude Include="Order.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="Admin.h" />
+    <ClInclude Include="test.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArtWorks.csv" />

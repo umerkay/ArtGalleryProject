@@ -122,6 +122,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="ArtWork.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="CartForm.cpp" />
@@ -135,9 +136,12 @@
     <ClCompile Include="Artist.cpp" />
     <ClCompile Include="Cart.cpp" />
     <ClCompile Include="Order.cpp" />
+    <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="ArtWork.h" />
     <ClInclude Include="ArtWorkForm.h">
       <FileType>CppForm</FileType>
@@ -159,6 +163,10 @@
     </ClInclude>
     <ClInclude Include="OOPLogic.h" />
     <ClInclude Include="Order.h" />
+    <ClInclude Include="Customer.h" />
+    <ClInclude Include="test.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ArtistForm.resx">
       <DependentUpon>ArtistForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

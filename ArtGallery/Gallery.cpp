@@ -182,6 +182,9 @@ string Gallery::signInUser(string username, string password) {
 	int UserID = findUserID(username);
 	if (UserID == -1) return "Username not found";
 	if (Users[UserID].authenticate(username, password) == true) {
+		if (username == "Admin") {
+			return "You have signed in as Admin, however the admin page UI has not yet been implemented :(";
+		}
 		currUser = &Users[UserID];
 		userHasAuthenticated = true;
 		Cart* c = new Cart();
@@ -234,6 +237,7 @@ void Gallery::logoutUser() {
 }
 
 Customer* Gallery::getCurrUser() {
+	//return Users[currUserID];
 	return currUser;
 }
 //artist related

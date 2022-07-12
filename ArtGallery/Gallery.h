@@ -1,5 +1,5 @@
 #pragma once
-#include "User.h"
+#include "Customer.h"
 #include "ArtWork.h"
 #include "Artist.h"
 #include "Order.h"
@@ -8,6 +8,7 @@ class Gallery {
 private:
 	Customer* Users;
 	Customer* currUser;
+	int currUserID;
 	int totalUsers;
 	bool userHasAuthenticated;
 	//artist related

@@ -175,6 +175,7 @@ namespace ArtGallery {
 			this->InAddress->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
 				static_cast<System::Int32>(static_cast<System::Byte>(225)));
 			this->InAddress->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->InAddress->Enabled = false;
 			this->InAddress->Location = System::Drawing::Point(482, 256);
 			this->InAddress->Name = L"InAddress";
 			this->InAddress->Size = System::Drawing::Size(298, 15);
@@ -625,6 +626,7 @@ namespace ArtGallery {
 #pragma endregion
 	private: System::Void CartForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		InName->Text = gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
+		InAddress->Text = gcnew String(GalleryApp->getCurrUser()->getAddress().c_str());
 		renderCart();
 	}
 		   private: System::Void renderCart() {
@@ -715,14 +717,16 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 
 		return;
 	}
+	Cart* CartObj = GalleryApp->getCurrUser()->getCart();
 
 	time_t now = time(0);
 	char* dt = ctime(&now);
 	if (InAddress->Text != "" && InComments->Text != "" && InContact->Text != "") {
-		Order* o = new Order(GalleryApp->getCurrUser()->getID(), STR(gcnew String(dt)), STR(InAddress->Text), STR(InComments->Text), STR(InContact->Text));
+		Order* o = new Order(GalleryApp->getCurrUser()->getID(), STR(gcnew String(dt)), STR(InAddress->Text), STR(InComments->Text), STR(InContact->Text), CartObj->getTotal());
 		GalleryApp->saveOrder(o);
 		MessageBox::Show("Your order has been received and you will receive a confirmation call soon.", "Hurray!");
 		GalleryApp->getCurrUser()->emptyCart();
+		GalleryApp->getCurrUser()->setDollarSpent(GalleryApp->getCurrUser()->getDollarSpent() + o->getTotal());
 		this->Close();
 	}
 	else {

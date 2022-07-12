@@ -18,7 +18,8 @@ namespace ArtGallery {
 	public ref class ArtWorkForm : public System::Windows::Forms::Form
 	{
 		ArtWork* artWork;
-		Gallery* GalleryApp;
+	private: System::Windows::Forms::Button^ button2;
+		   Gallery* GalleryApp;
 	public:
 		ArtWorkForm(ArtWork* A)
 		{
@@ -92,6 +93,7 @@ namespace ArtGallery {
 			this->Price = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -239,6 +241,22 @@ namespace ArtGallery {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &ArtWorkForm::button1_Click);
 			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Raleway", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::Color::White;
+			this->button2->Location = System::Drawing::Point(385, 637);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(144, 43);
+			this->button2->TabIndex = 13;
+			this->button2->Text = L"Like";
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &ArtWorkForm::button2_Click);
+			// 
 			// ArtWorkForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -246,6 +264,7 @@ namespace ArtGallery {
 			this->BackColor = System::Drawing::Color::Black;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(705, 721);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->Price);
@@ -275,6 +294,9 @@ namespace ArtGallery {
 		if (GalleryApp->getCurrUser()->getCart()->contains(artWork)) {
 			button1->Text = "Added";
 		}
+		if (GalleryApp->getCurrUser()->hasLiked(artWork->get_id())) {
+			button2->Text = "Liked";
+		}
 	}
 private: System::Void ArtistName_Click(System::Object^ sender, System::EventArgs^ e) {
 	ArtistForm^ AF = gcnew ArtistForm(artWork->getCreator());
@@ -290,6 +312,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	GalleryApp->getCurrUser()->addToCart(artWork);
 	button1->Text = "Added";
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!(GalleryApp->getCurrUser()->hasLiked(artWork->get_id()))) {
+		GalleryApp->getCurrUser()->likeArtWork(artWork->get_id());
+		button2->Text = "Unlike";
+	}
+	else {
+		GalleryApp->getCurrUser()->unLikeArtWork(artWork->get_id());
+		button2->Text = "Like";
+	}
 }
 };
 }

@@ -526,7 +526,7 @@ namespace ArtGallery {
 		}
 #pragma endregion
 	private: System::Void Home_Load(System::Object^ sender, System::EventArgs^ e) {
-		welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getUsername().c_str());
+		welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getName().c_str());
 		//welcomeMsg->Text = "Welcome " + gcnew String(GalleryApp->getCurrUser()->getCart()->getNoOfItems().ToString());
 		//welcomeMsg->Text = "Artwork available: " + gcnew String(GalleryApp->getArtWorkByID(0)->getTitle().c_str());
 
