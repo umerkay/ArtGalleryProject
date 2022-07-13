@@ -175,7 +175,6 @@ namespace ArtGallery {
 			this->InAddress->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(225)), static_cast<System::Int32>(static_cast<System::Byte>(225)),
 				static_cast<System::Int32>(static_cast<System::Byte>(225)));
 			this->InAddress->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->InAddress->Enabled = false;
 			this->InAddress->Location = System::Drawing::Point(482, 256);
 			this->InAddress->Name = L"InAddress";
 			this->InAddress->Size = System::Drawing::Size(298, 15);
@@ -602,6 +601,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->panel1);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"CartForm";
 			this->Text = L"CartForm";
 			this->Load += gcnew System::EventHandler(this, &CartForm::CartForm_Load);

@@ -114,7 +114,7 @@ void Gallery::loadData() {
 
 		Artists[i2] = *(new Artist());
 		//Artists[i].setID(i);
-		Artists[i2].setData(stoi(row2[0]), row2[1], row2[2], stoi(row2[3]), row2[4]);
+		Artists[i2].setData(i2, row2[1], row2[2], stoi(row2[3]), row2[4]);
 		i2++;
 	}
 
@@ -147,7 +147,7 @@ void Gallery::loadData() {
 		}
 
 		ArtWorks[i3] = *(new ArtWork());
-		ArtWorks[i3].setData(stoi(row3[0]), row3[1], row3[2], row3[3], stoi(row3[4]), getArtistbyID(stoi(row3[5])));
+		ArtWorks[i3].setData(i3, row3[1], row3[2], row3[3], stoi(row3[4]), getArtistbyID(stoi(row3[5])));
 		i3++;
 	}
 

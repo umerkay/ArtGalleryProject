@@ -224,6 +224,7 @@ namespace ArtGallery {
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Exit";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Auth::button1_Click_1);
 			// 
 			// panel3
 			// 
@@ -338,6 +339,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"Auth";
 			this->Text = L"Auth";
@@ -390,6 +392,9 @@ private: System::Void button_Click(System::Object^ sender, System::EventArgs^ e)
 	else {
 		login_Click(sender, e);
 	}
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }

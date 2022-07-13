@@ -16,7 +16,4 @@ public:
 	void removeArtistByID(int);
 	void removeUserByID(int);
 private:
-	friend class ArtWork;
-	friend class Artist;
-	friend class Order;
 };

@@ -51,7 +51,7 @@ void Customer::setCart(Cart* c) {
 void Customer::addToCart(ArtWork* a1) {
 	mycart->AddArtWork( a1);
 }
-//remove from art
+//remove from cart
 void Customer::removeFromCart(int id) {
 	mycart->removeArt(id);
 }

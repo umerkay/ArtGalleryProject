@@ -82,6 +82,7 @@ namespace ArtGallery {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ArtWorkForm::typeid));
 			this->TitleOfArt = (gcnew System::Windows::Forms::Label());
 			this->ByArtistFixed = (gcnew System::Windows::Forms::Label());
 			this->ArtistName = (gcnew System::Windows::Forms::Label());
@@ -277,6 +278,7 @@ namespace ArtGallery {
 			this->Controls->Add(this->ByArtistFixed);
 			this->Controls->Add(this->TitleOfArt);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ArtWorkForm";
 			this->Text = L"ArtWork";
@@ -295,7 +297,7 @@ namespace ArtGallery {
 			button1->Text = "Added";
 		}
 		if (GalleryApp->getCurrUser()->hasLiked(artWork->get_id())) {
-			button2->Text = "Liked";
+			button2->Text = "Unlike";
 		}
 	}
 private: System::Void ArtistName_Click(System::Object^ sender, System::EventArgs^ e) {

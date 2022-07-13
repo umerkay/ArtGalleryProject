@@ -3,17 +3,19 @@
 #include "ArtWork.h"
 #include "Artist.h"
 #include "Order.h"
+#include "Admin.h"
 
 class Gallery {
 private:
 	Customer* Users;
 	Customer* currUser;
 	int currUserID;
+	friend class Admin;
 	int totalUsers;
 	bool userHasAuthenticated;
 	//artist related
 	Artist* Artists;
-	Artist* currArtist;
+	//Artist* currArtist;
 	int totalArtists;
 
 	//artwork related
